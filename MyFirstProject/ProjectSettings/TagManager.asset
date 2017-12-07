@@ -6,6 +6,7 @@ TagManager:
   tags:
   - ground
   - bag
+  - Camera2
   layers:
   - Default
   - TransparentFX

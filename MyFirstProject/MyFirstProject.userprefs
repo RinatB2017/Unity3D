@@ -1,10 +1,10 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/bag.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/main/GenerateObjects.cs">
     <Files>
-      <File FileName="Assets/player.cs" Line="34" Column="3" />
-      <File FileName="Assets/bag.cs" Line="22" Column="50" />
-      <File FileName="Assets/GenerateObjects.cs" Line="1" Column="1" />
+      <File FileName="Assets/main/GenerateObjects.cs" Line="24" Column="1" />
+      <File FileName="Assets/main/player.cs" Line="11" Column="3" />
+      <File FileName="Assets/main/bag.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />

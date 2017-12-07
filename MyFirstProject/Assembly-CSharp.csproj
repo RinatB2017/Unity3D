@@ -51,9 +51,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\bag.cs" />
-     <Compile Include="Assets\GenerateObjects.cs" />
-     <Compile Include="Assets\player.cs" />
+     <Compile Include="Assets\main\bag.cs" />
+     <Compile Include="Assets\main\GenerateObjects.cs" />
+     <Compile Include="Assets\main\player.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>/home/boss/Unity-2017.3.0f1/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>

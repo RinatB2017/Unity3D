@@ -7,6 +7,7 @@ public class GenerateObjects : MonoBehaviour {
 
 	void AddGameObject()
 	{
+		circle.tag = "bag";
 		Instantiate(circle);
 	}
 
