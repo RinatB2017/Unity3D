@@ -25,11 +25,16 @@ public class player : MonoBehaviour {
 	void Update () {
 		float tX = Input.GetAxis("Horizontal");
 		float tY = Input.GetAxis("Vertical");
-		if (tX > 0)	X -= delta;
-		if (tX < 0) X += delta;
-		if (tY > 0) Y -= delta;
-		if (tY < 0) Y += delta;
+		if (tX > 0)	X += delta;
+		if (tX < 0) X -= delta;
+		if (tY > 0) Y += delta;
+		if (tY < 0) Y -= delta;
 
 		transform.position = new Vector3(X, Y, Z);
+
+		if (Input.GetKeyDown(KeyCode.Space))
+		{
+			//GetComponent<Rigidbody2D>().AddForce(new Vector2(0, 500));
+		}
 	}
 }
