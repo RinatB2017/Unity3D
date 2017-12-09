@@ -115,7 +115,6 @@ public class Character : Unit
     }
 }
 
-
 public enum CharState
 {
     Idle,
