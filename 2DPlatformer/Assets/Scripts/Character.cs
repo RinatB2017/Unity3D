@@ -11,7 +11,10 @@ public class Character : Unit
         get { return lives; }
         set
         {
-           if (value < 5) lives = value;
+			if (value < 5)
+			{
+				lives = value;
+			}
             livesBar.Refresh();
         }
     }
@@ -91,8 +94,6 @@ public class Character : Unit
 
         rigidbody.velocity = Vector3.zero;
         rigidbody.AddForce(transform.up * 8.0F, ForceMode2D.Impulse);
-
-        Debug.Log(lives);
     }
 
     private void CheckGround()

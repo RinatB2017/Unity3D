@@ -33,12 +33,22 @@ public class Bullet : MonoBehaviour
         transform.position = Vector3.MoveTowards(transform.position, transform.position + direction, speed * Time.deltaTime);
     }
 
-    private void OnTriggerEnter2D(Collider2D collider)
+	private void FixedUpdate()
+	{
+		Collider2D[] colliders = Physics2D.OverlapCircleAll(transform.position, 0.1F);
+		if (colliders.Length > 1)
+		{
+			//Debug.Log("Bullet Destroy");
+			Destroy(gameObject);
+		}
+	}
+    
+	private void OnTriggerEnter2D(Collider2D collider)
     {
         Unit unit = collider.GetComponent<Unit>();
         if (unit && unit.gameObject != parent)
         {
             Destroy(gameObject);
         }
-    }
+	}
 }
