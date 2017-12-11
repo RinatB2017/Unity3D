@@ -37,9 +37,9 @@ public class player : MonoBehaviour {
 	void OnGUI()
 	{
 		int h = 20;
-		GUI.Label(new Rect(0, 0, 100, h), "X=" + X);
-		GUI.Label(new Rect(0, h, 100, h), "Y=" + Y);
-		GUI.Label(new Rect(0, h * 2, 100, h), "Z=" + Z);
+		GUI.Label(new Rect(0, 0, 100, h), 		"X=" + X);
+		GUI.Label(new Rect(0, h, 100, h),		"Y=" + Y);
+		GUI.Label(new Rect(0, h * 2, 100, h), 	"Z=" + Z);
 	}
 
 	// Use this for initialization
