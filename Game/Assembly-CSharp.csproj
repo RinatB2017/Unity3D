@@ -51,7 +51,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\Scripts\alien.cs" />
+     <Compile Include="Assets\Scripts\Alien.cs" />
      <Compile Include="Assets\Scripts\Bullet.cs" />
      <Compile Include="Assets\Scripts\player.cs" />
  <Reference Include="UnityEngine.UI">

@@ -42,7 +42,6 @@ public class player : MonoBehaviour {
 		GUI.Label(new Rect(0, h * 2, 100, h), 	"Z=" + Z);
 	}
 
-	// Use this for initialization
 	void Start () {
 		X = transform.position.x;
 		Y = transform.position.y;
@@ -52,13 +51,11 @@ public class player : MonoBehaviour {
 		sprite = GetComponentInChildren<SpriteRenderer>();
 	}
 
-	// Update is called once per frame
 	void Update () {
 		float tX = Input.GetAxis("Horizontal");
 		float tY = Input.GetAxis("Vertical");
-		sprite.flipX = tX < 0;
-		if (tX > 0)	X += delta;
-		if (tX < 0) X -= delta;
+		if (tX > 0) { X += delta; sprite.flipX = false; }
+		if (tX < 0) { X -= delta; sprite.flipX = true; }
 		if (tY > 0) Y += delta;
 		if (tY < 0) Y -= delta;
 
@@ -66,7 +63,7 @@ public class player : MonoBehaviour {
 
 		if (Input.GetKeyDown(KeyCode.Space))
 		{
-			Shoot(tX < 0);
+			Shoot(sprite.flipX);
 		}
 	}
 }

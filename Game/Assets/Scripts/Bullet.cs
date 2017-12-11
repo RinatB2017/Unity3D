@@ -38,15 +38,15 @@ public class Bullet : MonoBehaviour
 		Collider2D[] colliders = Physics2D.OverlapCircleAll(transform.position, 0.1F);
 		if (colliders.Length > 1)
 		{
-				//Debug.Log("Bullet Destroy");
-				Destroy(gameObject);
+			Debug.Log("Bullet Destroy");
+			Destroy(gameObject);
 		}
 	}
 
 	private void OnTriggerEnter2D(Collider2D collider)
 	{
 		Debug.Log("Bullet: OnTriggerEnter2D");
-		alien unit = collider.GetComponent<alien>();
+		Alien unit = collider.GetComponent<Alien>();
 		if (unit && unit.gameObject != parent)
 		{
 			Destroy(gameObject);

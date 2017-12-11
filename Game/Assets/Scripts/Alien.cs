@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class alien : MonoBehaviour {
+public class Alien : MonoBehaviour {
 
 	protected virtual void OnTriggerEnter2D(Collider2D collider)
 	{
-		Debug.Log("alien: OnTriggerEnter2D");
+		Debug.Log("Alien: OnTriggerEnter2D");
 		Bullet bullet = collider.GetComponent<Bullet>();
 		if (bullet)
 		{
@@ -15,12 +15,10 @@ public class alien : MonoBehaviour {
 		}
 	}
 
-	// Use this for initialization
 	void Start () {
 		
 	}
 	
-	// Update is called once per frame
 	void Update () {
 		
 	}
