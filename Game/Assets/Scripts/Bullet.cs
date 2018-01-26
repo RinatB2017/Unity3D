@@ -42,14 +42,4 @@ public class Bullet : MonoBehaviour
 			Destroy(gameObject);
 		}
 	}
-
-	private void OnTriggerEnter2D(Collider2D collider)
-	{
-		Debug.Log("Bullet: OnTriggerEnter2D");
-		Alien unit = collider.GetComponent<Alien>();
-		if (unit && unit.gameObject != parent)
-		{
-			Destroy(gameObject);
-		}
-	}
 }
