@@ -1,4 +1,4 @@
-﻿/// Author: Samuel Arzt
+/// Author: Samuel Arzt
 /// Date: March 2017
 
 #region Includes

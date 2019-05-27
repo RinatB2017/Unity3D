@@ -1,4 +1,4 @@
-﻿<Properties StartupItem="Assembly-CSharp.csproj">
+<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="MonoDevelop.Default" />
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets/main/GenerateObjects.cs">
     <Files>
