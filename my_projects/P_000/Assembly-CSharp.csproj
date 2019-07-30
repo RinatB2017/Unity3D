@@ -55,6 +55,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Scenes\Example.cs" />
      <Compile Include="Assets\Scenes\Player.cs" />
      <Compile Include="Assets\Scenes\Test.cs" />
  <Reference Include="Unity.Timeline.Editor">
