@@ -58,6 +58,7 @@
      <Compile Include="Assets\Scripts\Example.cs" />
      <Compile Include="Assets\Scripts\Player.cs" />
      <Compile Include="Assets\Scripts\Test.cs" />
+     <Compile Include="Assets\Scripts\Test_click.cs" />
      <Compile Include="Assets\Scripts\Test_triiger.cs" />
      <Compile Include="Assets\Scripts\TestCoroutine.cs" />
  <Reference Include="Unity.Timeline.Editor">
