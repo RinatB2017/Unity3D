@@ -7,6 +7,11 @@ public class Test_click : MonoBehaviour
     
     void OnMouseDown()
     {
-        Debug.Log("click");
+        Debug.Log("down");
+    }
+
+    void OnMouseUp()
+    {
+        Debug.Log("up");
     }
 }
