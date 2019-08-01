@@ -6,6 +6,24 @@ public class Player : MonoBehaviour
     private Vector2 target;
     private Vector2 position;
     private Camera cam;
+    
+    //If your GameObject starts to collide with another GameObject with a Collider
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        //Output the Collider's GameObject's name
+        Debug.Log(collision.collider.name);
+    }
+
+    //If your GameObject keeps colliding with another GameObject with a Collider, do something
+    void OnCollisionStay2D(Collision2D collision)
+    {
+        //Check to see if the Collider's name is "Test_1"
+        if (collision.collider.name == "Test_1")
+        {
+            //Output the message
+            Debug.Log("Test_1 is here!");
+        }
+    }
 
     void Start()
     {
@@ -40,33 +58,4 @@ public class Player : MonoBehaviour
             target = point;
         }
     }
-
-    /*
-    public float speed = 10.0f;
-    private Vector2 target;
-    
-    void Start()
-    {
-        //StartCoroutine(Example());
-        print("Start");
-        print(transform.position);
-
-        target = new Vector2(5.0f, 0.0f);
-        
-        float step = speed * Time.deltaTime;
-        transform.position = Vector2.MoveTowards(transform.position,
-                                                 target,
-                                                 step);
-        print(transform.position);
-    }
-
-    IEnumerator Example()
-    {
-        while(true) {
-            transform.Translate(0.1f, 0, Time.deltaTime);
-            yield return new WaitForSeconds(0.1f);
-            print("OK");
-        }
-    }
-    */
 }

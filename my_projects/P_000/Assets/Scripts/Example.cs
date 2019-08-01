@@ -8,18 +8,18 @@ using UnityEngine;
 public class Example : MonoBehaviour
 {
     //If your GameObject starts to collide with another GameObject with a Collider
-    void OnCollisionEnter(Collision collision)
+    void OnCollisionEnter2D(Collision2D collision)
     {
-        Debug.Log("OnCollisionEnter");
+        Debug.Log("OnCollisionEnter2D");
         
         //Output the Collider's GameObject's name
         Debug.Log(collision.collider.name);
     }
 
     //If your GameObject keeps colliding with another GameObject with a Collider, do something
-    void OnCollisionStay(Collision collision)
+    void OnCollisionStay2D(Collision2D collision)
     {
-        Debug.Log("OnCollisionStay");
+        Debug.Log("OnCollisionStay2D");
         
         //Check to see if the Collider's name is "Chest"
         if (collision.collider.name == "Chest")
