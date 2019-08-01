@@ -10,6 +10,8 @@ public class Example : MonoBehaviour
     //If your GameObject starts to collide with another GameObject with a Collider
     void OnCollisionEnter(Collision collision)
     {
+        Debug.Log("OnCollisionEnter");
+        
         //Output the Collider's GameObject's name
         Debug.Log(collision.collider.name);
     }
@@ -17,6 +19,8 @@ public class Example : MonoBehaviour
     //If your GameObject keeps colliding with another GameObject with a Collider, do something
     void OnCollisionStay(Collision collision)
     {
+        Debug.Log("OnCollisionStay");
+        
         //Check to see if the Collider's name is "Chest"
         if (collision.collider.name == "Chest")
         {

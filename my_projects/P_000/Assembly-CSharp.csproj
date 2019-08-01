@@ -55,32 +55,26 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\Scenes\Example.cs" />
-     <Compile Include="Assets\Scenes\Player.cs" />
-     <Compile Include="Assets\Scenes\Test.cs" />
+     <Compile Include="Assets\Scripts\Example.cs" />
+     <Compile Include="Assets\Scripts\Player.cs" />
+     <Compile Include="Assets\Scripts\Test.cs" />
  <Reference Include="Unity.Timeline.Editor">
  <HintPath>/home/boss/Programming/_GitHub/Unity3D/my_projects/P_000/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
  </Reference>
+ <Reference Include="Unity.VSCode.Editor">
+ <HintPath>/home/boss/Programming/_GitHub/Unity3D/my_projects/P_000/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
+ </Reference>
  <Reference Include="Unity.TextMeshPro.Editor">
  <HintPath>/home/boss/Programming/_GitHub/Unity3D/my_projects/P_000/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.UI">
+ <HintPath>/home/boss/Programming/_GitHub/Unity3D/my_projects/P_000/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
  </Reference>
  <Reference Include="Unity.Timeline">
  <HintPath>/home/boss/Programming/_GitHub/Unity3D/my_projects/P_000/Library/ScriptAssemblies/Unity.Timeline.dll</HintPath>
  </Reference>
  <Reference Include="Unity.CollabProxy.Editor">
  <HintPath>/home/boss/Programming/_GitHub/Unity3D/my_projects/P_000/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
- </Reference>
- <Reference Include="Unity.TextMeshPro">
- <HintPath>/home/boss/Programming/_GitHub/Unity3D/my_projects/P_000/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
- </Reference>
- <Reference Include="Unity.Analytics.DataPrivacy">
- <HintPath>/home/boss/Programming/_GitHub/Unity3D/my_projects/P_000/Library/ScriptAssemblies/Unity.Analytics.DataPrivacy.dll</HintPath>
- </Reference>
- <Reference Include="Unity.VSCode.Editor">
- <HintPath>/home/boss/Programming/_GitHub/Unity3D/my_projects/P_000/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
- </Reference>
- <Reference Include="UnityEngine.UI">
- <HintPath>/home/boss/Programming/_GitHub/Unity3D/my_projects/P_000/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
  </Reference>
  <Reference Include="Unity.Rider.Editor">
  <HintPath>/home/boss/Programming/_GitHub/Unity3D/my_projects/P_000/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
@@ -90,6 +84,12 @@
  </Reference>
  <Reference Include="Unity.2D.Tilemap.Editor">
  <HintPath>/home/boss/Programming/_GitHub/Unity3D/my_projects/P_000/Library/ScriptAssemblies/Unity.2D.Tilemap.Editor.dll</HintPath>
+ </Reference>
+ <Reference Include="Unity.TextMeshPro">
+ <HintPath>/home/boss/Programming/_GitHub/Unity3D/my_projects/P_000/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
+ </Reference>
+ <Reference Include="Unity.Analytics.DataPrivacy">
+ <HintPath>/home/boss/Programming/_GitHub/Unity3D/my_projects/P_000/Library/ScriptAssemblies/Unity.Analytics.DataPrivacy.dll</HintPath>
  </Reference>
  <Reference Include="UnityEditor.UI">
  <HintPath>/home/boss/Programming/_GitHub/Unity3D/my_projects/P_000/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
