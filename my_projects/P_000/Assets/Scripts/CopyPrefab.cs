@@ -10,7 +10,7 @@ public class CopyPrefab : MonoBehaviour
     {
         for (int i = 0; i < 10; i++)
         {
-            Instantiate(prefab, new Vector3(i * 2.0F, 0, 0), Quaternion.identity);
+            Instantiate(prefab, new Vector3(-6 + i * 1.3F, 0, 0), Quaternion.identity);
         }
     }
 }
