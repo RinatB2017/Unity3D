@@ -56,9 +56,11 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Scripts\CopyPrefab.cs" />
+     <Compile Include="Assets\Scripts\DeleteGameObject.cs" />
      <Compile Include="Assets\Scripts\Example.cs" />
      <Compile Include="Assets\Scripts\ExampleClass.cs" />
      <Compile Include="Assets\Scripts\Player.cs" />
+     <Compile Include="Assets\Scripts\Shooting.cs" />
      <Compile Include="Assets\Scripts\Test.cs" />
      <Compile Include="Assets\Scripts\Test_click.cs" />
      <Compile Include="Assets\Scripts\Test_triiger.cs" />
