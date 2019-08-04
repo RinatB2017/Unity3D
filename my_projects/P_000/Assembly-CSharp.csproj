@@ -55,6 +55,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Scripts\Click.cs" />
      <Compile Include="Assets\Scripts\CopyPrefab.cs" />
      <Compile Include="Assets\Scripts\DeleteGameObject.cs" />
      <Compile Include="Assets\Scripts\Example.cs" />
