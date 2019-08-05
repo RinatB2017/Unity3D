@@ -5,10 +5,6 @@ using UnityEngine;
 public class Click : MonoBehaviour
 {
     public Transform prefab;
-    void Update()
-    {
-        
-    }
     
     void OnMouseDown()
     {
