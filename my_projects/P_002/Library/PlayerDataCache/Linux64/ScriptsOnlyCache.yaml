@@ -1,5 +1,7 @@
 ScriptsOnlyBuild:
   usedScripts:
+    Assembly-CSharp.dll:
+    - AddForce
     UnityEditor.Graphs.dll:
     - UnityEditor.Graphs.AnimationBlendTree.Graph
     - UnityEditor.Graphs.AnimationBlendTree.GraphGUI
@@ -10,7 +12,7 @@ ScriptsOnlyBuild:
     - UnityEditor.TestTools.TestRunner.Api.CallbacksHolder
     - UnityEditor.TestTools.TestRunner.TestListCacheData
   sceneClasses:
-    Assets/Scenes/SampleScene.unity:
+    Assets/Scenes/Test_scene.unity:
     - Class: 1
       Script: {instanceID: 0}
     - Class: 4
@@ -29,19 +31,23 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 48
       Script: {instanceID: 0}
+    - Class: 54
+      Script: {instanceID: 0}
     - Class: 65
       Script: {instanceID: 0}
     - Class: 81
-      Script: {instanceID: 0}
-    - Class: 89
       Script: {instanceID: 0}
     - Class: 104
       Script: {instanceID: 0}
     - Class: 108
       Script: {instanceID: 0}
-    - Class: 157
+    - Class: 114
+      Script: {instanceID: 12434}
+    - Class: 115
       Script: {instanceID: 0}
-    - Class: 258
+    - Class: 135
+      Script: {instanceID: 0}
+    - Class: 157
       Script: {instanceID: 0}
   scriptHashData:
   - hash:
@@ -458,7 +464,13 @@ ScriptsOnlyBuild:
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
     className: PlayableTrack
+  - hash:
+      serializedVersion: 2
+      Hash: 36e6de69bcd386353c298f1003a06056
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: AddForce
   platform: 24
   scenePathNames:
-  - Assets/Scenes/SampleScene.unity
+  - Assets/Scenes/Test_scene.unity
   playerPath: /home/boss/Programming/_GitHub/Unity3D/my_projects/P_002/P_002.x86_64
