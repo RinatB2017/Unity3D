@@ -4,13 +4,6 @@ using UnityEngine;
 
 public class CheckDeep : MonoBehaviour
 {
-    // public Character player;
-
-    // void Awake()
-    // {
-    //     player = GetComponent<Character>();
-    // }
-
     void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.name == "Player")
