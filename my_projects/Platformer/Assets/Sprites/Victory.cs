@@ -8,7 +8,8 @@ public class Victory : MonoBehaviour
         if (collision.gameObject.name == "Player")
         {
             print("You win!");
-            SceneManager.LoadScene ("YouWin");
+            //SceneManager.LoadScene ("YouWin");
+            collision.gameObject.SendMessage("You_Win");
         }
     }
 }

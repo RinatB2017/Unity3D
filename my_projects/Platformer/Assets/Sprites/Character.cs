@@ -15,7 +15,10 @@ public class Character : MonoBehaviour
     public float beginX = -5f;
     public float beginY = -2f;
     public float beginZ = 0;
-    
+
+    public GameObject you_lost;
+    public GameObject you_win;
+
     void Awake()
     {
         PlayerRigidbody = GetComponentInChildren<Rigidbody2D>();
@@ -32,9 +35,22 @@ public class Character : MonoBehaviour
         }
         else
         {
-            print("You lost!");
-            SceneManager.LoadScene ("YouLost");
+            You_Lost();
         }
+    }
+
+    void You_Win()
+    {
+        print("You Win!");
+        //SceneManager.LoadScene ("YouWin");
+        you_win.SetActive(true);
+    }
+
+    void You_Lost() 
+    {
+        print("You lost!");
+        //SceneManager.LoadScene ("YouLost");
+        you_lost.SetActive(true);
     }
 
     void Move() 
@@ -71,6 +87,5 @@ public class Character : MonoBehaviour
         {
             charAnimator.SetInteger("State", 0);
         }
-
     }
 }
