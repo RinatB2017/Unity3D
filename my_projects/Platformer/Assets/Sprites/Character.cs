@@ -32,8 +32,8 @@ public class Character : MonoBehaviour
         }
         else
         {
-            print("You die!");
-            SceneManager.LoadScene ("YouDie");
+            print("You lost!");
+            SceneManager.LoadScene ("YouLost");
         }
     }
 
