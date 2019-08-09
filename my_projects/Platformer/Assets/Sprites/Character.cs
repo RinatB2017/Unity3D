@@ -73,6 +73,25 @@ public class Character : MonoBehaviour
 
     void Update()
     {
+        char state = 0;
+        if(CheckGround())
+            state |= (char)0x01;
+        else
+            state &= ~(char)0x01;
+
+        if(Input.GetButton("Horizontal"))
+            state |= (char)0x02;
+        else
+            state &= ~(char)0x02;
+            
+        if(Input.GetButton("Jump"))
+            state |= (char)0x04;
+        else
+            state &= ~(char)0x04;
+    }
+
+    void Update2()
+    {
         if(Input.GetButton("Horizontal"))
         {
             charAnimator.SetInteger("State", 1);
