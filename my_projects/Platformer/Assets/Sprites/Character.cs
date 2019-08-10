@@ -19,6 +19,27 @@ public class Character : MonoBehaviour
     public GameObject you_lost;
     public GameObject you_win;
 
+    //private int old_state = 0;
+
+    enum States
+    {
+        NONE = 0,
+        MOVE = 1,
+        JUMP = 2        
+    }
+
+    enum Keys
+    {
+        jhg = 0,
+        jhG = 1,
+        jHg = 2,
+        jHG = 3,
+        Jhg = 4,
+        JhG = 5,
+        JHg = 6,
+        JHG = 7
+    }
+
     void Awake()
     {
         PlayerRigidbody = GetComponentInChildren<Rigidbody2D>();
@@ -73,21 +94,54 @@ public class Character : MonoBehaviour
 
     void Update()
     {
-        char state = 0;
+        int state = 0;
         if(CheckGround())
-            state |= (char)0x01;
+            state |= 0x01;
         else
-            state &= ~(char)0x01;
+            state &= ~0x01;
 
         if(Input.GetButton("Horizontal"))
-            state |= (char)0x02;
+            state |= 0x02;
         else
-            state &= ~(char)0x02;
+            state &= ~0x02;
             
         if(Input.GetButton("Jump"))
-            state |= (char)0x04;
+            state |= 0x04;
         else
-            state &= ~(char)0x04;
+            state &= ~0x04;
+
+        /*
+        if(old_state != state)
+        {
+            print(state);
+            old_state = state;
+        }
+        */
+
+        switch (state)
+        {
+            case (int)Keys.jhg: charAnimator.SetInteger("State", (int)States.NONE);         break;
+            case (int)Keys.jhG: charAnimator.SetInteger("State", (int)States.NONE);         break;
+            case (int)Keys.jHg: charAnimator.SetInteger("State", (int)States.NONE);         break;
+            case (int)Keys.jHG: charAnimator.SetInteger("State", (int)States.MOVE); Move(); break;
+            case (int)Keys.Jhg: charAnimator.SetInteger("State", (int)States.JUMP);         break;
+            case (int)Keys.JhG: charAnimator.SetInteger("State", (int)States.JUMP); Jump(); break;
+            case (int)Keys.JHg: charAnimator.SetInteger("State", (int)States.MOVE); Move(); break;
+            case (int)Keys.JHG: charAnimator.SetInteger("State", (int)States.JUMP); Jump(); break;
+
+            // case 1: charAnimator.SetInteger("State", (int)States.NONE);          break;
+            // case 2: charAnimator.SetInteger("State", (int)States.NONE);          break;
+            // case 2: charAnimator.SetInteger("State", (int)States.NONE);          break;
+            // case 3: charAnimator.SetInteger("State", (int)States.MOVE);  Move(); break;
+            // case 4: charAnimator.SetInteger("State", (int)States.JUMP);          break;
+            // case 5: charAnimator.SetInteger("State", (int)States.JUMP);  Jump(); break;
+            // case 6: charAnimator.SetInteger("State", (int)States.MOVE);  Move(); break;
+            // case 7: charAnimator.SetInteger("State", (int)States.JUMP);  Jump(); break;
+
+            default:
+                print("state = " + state);
+                break;
+        }
     }
 
     void Update2()
