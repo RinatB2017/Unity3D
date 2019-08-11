@@ -1,4 +1,4 @@
-﻿Shader "Utils/Blur"
+Shader "Utils/Blur"
 {
     Properties
     {

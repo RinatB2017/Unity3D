@@ -1,4 +1,4 @@
-﻿using Pixeye.Framework;
+using Pixeye.Framework;
 using Pixeye.Source;
 
 public class StarterGame : Starter

@@ -1,4 +1,4 @@
-﻿//  Project : ecs
+//  Project : ecs
 // Contacts : Pix - ask@pixeye.games
 
 using System;

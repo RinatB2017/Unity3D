@@ -1,4 +1,4 @@
-﻿/// Add somewhere in Editor folder
+/// Add somewhere in Editor folder
 /// Select prefab and press Command/control + W to get it in the scene
 
 using UnityEditor;

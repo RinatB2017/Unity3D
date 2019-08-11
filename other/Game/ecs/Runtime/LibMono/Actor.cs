@@ -1,4 +1,4 @@
-﻿//  Project  : ACTORS
+//  Project  : ACTORS
 //  Contacts : Pixeye - ask@pixeye.games
 
 
