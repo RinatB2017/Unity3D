@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 {
     "name": "Unity.VSCode.Editor",
     "references": [],
@@ -7,3 +8,14 @@
     ],
     "excludePlatforms": []
 }
+=======
+{
+    "name": "Unity.VSCode.Editor",
+    "references": [],
+    "optionalUnityReferences": [],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": []
+}
+>>>>>>> 9b5a8c4fca00507bfc3f7064240cc1922e84bc24

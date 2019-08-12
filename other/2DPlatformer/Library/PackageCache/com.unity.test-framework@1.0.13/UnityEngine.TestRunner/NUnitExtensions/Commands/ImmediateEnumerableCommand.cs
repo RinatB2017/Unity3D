@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 ﻿using System;
+=======
+using System;
+>>>>>>> 9b5a8c4fca00507bfc3f7064240cc1922e84bc24
 using System.Collections;
 using NUnit.Framework.Internal;
 using NUnit.Framework.Internal.Commands;
