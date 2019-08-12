@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/YouLost.unity
     guid: c750b04b6f3d4380cb698ea84f840b37
+  - enabled: 1
+    path: Assets/Scenes/Test_tilemap.unity
+    guid: 8c21011bbe9f41a2abd335af2a5cbc25
   m_configObjects: {}
