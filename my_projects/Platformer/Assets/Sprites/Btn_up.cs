@@ -1,7 +1,7 @@
 using UnityEngine;
 using System.Collections;
 
-public class Btn_right : MonoBehaviour
+public class Btn_up : MonoBehaviour
 {
     public Rigidbody2D player;
     public float speed = 1f;
@@ -23,13 +23,7 @@ public class Btn_right : MonoBehaviour
         if(flag) 
         {
             Vector2 position = player.transform.position;
-            //Debug.Log("position.x " + position.x);
-
-            //position.x = position.x + speed * Time.deltaTime;
-            position.x = position.x + speed;
-
-            //Debug.Log("position.x " + position.x);
-
+            position.y = position.y + speed;
             player.MovePosition(position);
         }
     }

@@ -11,8 +11,6 @@ public class Player_move : MonoBehaviour
     {
         Vector2 position = transform.position;
         position.x = position.x - speed * value * Time.deltaTime;
-
-        rigidbody2D.MovePosition(position);
     }
 
     public void move_right(float value)
@@ -32,11 +30,15 @@ public class Player_move : MonoBehaviour
     {
         float horizontal = Input.GetAxis("Horizontal");
         float vertical = Input.GetAxis("Vertical");
-        Vector2 position = transform.position;
-        position.x = position.x + speed * horizontal * Time.deltaTime;
-        position.y = position.y + speed * vertical * Time.deltaTime;
+        if(horizontal != 0f || vertical != 0f) {
+            Vector2 position = transform.position;
+            position.x = position.x + speed * horizontal * Time.deltaTime;
+            position.y = position.y + speed * vertical * Time.deltaTime;
 
-        //transform.position = position;
-        rigidbody2D.MovePosition(position);
+            //Debug.Log("position.x " + position.x);
+
+            //transform.position = position;
+            rigidbody2D.MovePosition(position);
+        }
     }
 }
