@@ -4,33 +4,31 @@ using System.Collections;
 public class Btn_right : MonoBehaviour
 {
     public Rigidbody2D player;
-    public float speed = 1f;
+    //public float speed = 1f;
 
-    private bool flag = false;
+    //private bool flag = false;
 
+    //---
     void OnMouseDown()
     {
-        flag = true;
+        //flag = true;
+        player.gameObject.SendMessage("btn_right_down");
     }
 
     void OnMouseUp()
     {
-        flag = false;
+        //flag = false;
+        player.gameObject.SendMessage("btn_right_up");
     }
+    //---
 
-    void Update()
-    {
-        if(flag) 
-        {
-            Vector2 position = player.transform.position;
-            //Debug.Log("position.x " + position.x);
-
-            //position.x = position.x + speed * Time.deltaTime;
-            position.x = position.x + speed;
-
-            //Debug.Log("position.x " + position.x);
-
-            player.MovePosition(position);
-        }
-    }
+    // void Update()
+    // {
+    //     if(flag) 
+    //     {
+    //         Vector2 position = player.transform.position;
+    //         position.x = position.x + speed;
+    //         player.MovePosition(position);
+    //     }
+    // }
 }
