@@ -31,6 +31,19 @@ public class Player_move : MonoBehaviour
         f_down = state;
     }
 
+    void click(int ID, int state)
+    {
+        switch (ID)
+        {
+            case 1: f_left = (state != 0) ? true : false;  break;
+            case 2: f_right = (state != 0) ? true : false; break;
+            case 3: f_up = (state != 0) ? true : false;    break;
+            case 4: f_down = (state != 0) ? true : false;  break;
+            default:
+                break;
+        }
+    }
+
     void Start()
     {
         

@@ -17,8 +17,8 @@ public class Click : MonoBehaviour
     {
         Debug.Log("down");
 
-        //add_obj();
-        start_coroutine();
+        add_obj();
+        //start_coroutine();
     }
 
     private void start_coroutine()
@@ -34,7 +34,8 @@ public class Click : MonoBehaviour
                                           transform.position.z);
         Instantiate(prefab, temp_vector, Quaternion.identity);
         
-        new_y = transform.position.y + transform.localScale.y;
+        new_y = new_y + transform.localScale.y;
+        print("new_y " + new_y);
     }
 
     void OnMouseUp()
