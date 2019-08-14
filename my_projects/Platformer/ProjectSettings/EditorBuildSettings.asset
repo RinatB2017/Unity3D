@@ -20,4 +20,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/YouLost.unity
     guid: c750b04b6f3d4380cb698ea84f840b37
+  - enabled: 1
+    path: Assets/Scenes/Test_MultiTouch.unity
+    guid: dbf38a658cbc11401be382ff1d1faad5
   m_configObjects: {}
