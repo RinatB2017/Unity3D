@@ -4,8 +4,14 @@ using System.Collections;
 public class Click : MonoBehaviour
 {
     public Transform prefab;
+    public float new_y;
 
     private IEnumerator coroutine;
+    
+    void Awake()
+    {
+        new_y = transform.position.y + transform.localScale.y;
+    }
     
     void OnMouseDown()
     {
@@ -24,9 +30,11 @@ public class Click : MonoBehaviour
     private void add_obj()
     {
         Vector3 temp_vector = new Vector3(transform.position.x, 
-                                          transform.position.y + transform.localScale.y,
+                                          new_y,
                                           transform.position.z);
         Instantiate(prefab, temp_vector, Quaternion.identity);
+        
+        new_y = transform.position.y + transform.localScale.y;
     }
 
     void OnMouseUp()

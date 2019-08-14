@@ -14,69 +14,22 @@ public class Player_move : MonoBehaviour
     private bool f_up    = false;
     private bool f_down  = false;
 
-    public void move_left(float value)
+    void click_left(bool state)
     {
-        Vector2 position = transform.position;
-        position.x = position.x - speed * value * Time.deltaTime;
+        f_left = state;
     }
-
-    public void move_right(float value)
+    void click_right(bool state)
     {
-        Vector2 position = transform.position;
-        position.x = position.x + speed * value * Time.deltaTime;
-
-        rigidbody2D.MovePosition(position);
+        f_right = state;
     }
-
-    //---
-    void btn_left_up()
+    void click_up(bool state)
     {
-        f_left = false;
-        print("btn_left_up");
+        f_up = state;
     }
-
-    void btn_left_down()
+    void click_down(bool state)
     {
-        f_left = true;
-        print("btn_left_down");
+        f_down = state;
     }
-
-    void btn_right_up()
-    {
-        f_right = false;
-        print("btn_right_up");
-    }
-
-    void btn_right_down()
-    {
-        f_right = true;
-        print("btn_right_down");
-    }
-
-    void btn_up_up()
-    {
-        f_up = false;
-        print("btn_up_up");
-    }
-
-    void btn_up_down()
-    {
-        f_up = true;
-        print("btn_up_down");
-    }
-
-    void btn_down_up()
-    {
-        f_down = false;
-        print("btn_down_up");
-    }
-
-    void btn_down_down()
-    {
-        f_down = true;
-        print("btn_down_down");
-    }
-    //---
 
     void Start()
     {
