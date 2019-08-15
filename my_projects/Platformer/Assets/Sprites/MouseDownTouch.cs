@@ -6,53 +6,87 @@ using UnityEngine.UI;
 /// </summary>
 public class MouseDownTouch : MonoBehaviour
 {
-    private int old_cnt = -1;
     private int cnt = -1;
 
-    public Text text;
-    public Image image;
+    public Text pos_x;
+    public Text pos_y;
+
+    public Text pos_x1;
+    public Text pos_y1;
+    public Text pos_x2;
+    public Text pos_y2;
+
+    public Image btn_left;
+    public Image btn_right;
+    public Image btn_up;
+    public Image btn_down;
+
+    public Rect rect_left;
+    public Rect rect_right;
+    public Rect rect_up;
+    public Rect rect_down;
+
+    void Awake()
+    {
+        rect_left.x = btn_left.rectTransform.localPosition.x;
+        rect_left.y = btn_left.rectTransform.localPosition.y;
+        rect_left.width = btn_left.rectTransform.rect.width;
+        rect_left.height = btn_left.rectTransform.rect.height;
+
+        rect_right.x = btn_right.rectTransform.localPosition.x;
+        rect_right.y = btn_right.rectTransform.localPosition.y;
+        rect_right.width = btn_right.rectTransform.rect.width;
+        rect_right.height = btn_right.rectTransform.rect.height;
+        
+        rect_up.x = btn_up.rectTransform.localPosition.x;
+        rect_up.y = btn_up.rectTransform.localPosition.y;
+        rect_up.width = btn_up.rectTransform.rect.width;
+        rect_up.height = btn_up.rectTransform.rect.height;
+        
+        rect_down.x = btn_down.rectTransform.localPosition.x;
+        rect_down.y = btn_down.rectTransform.localPosition.y;
+        rect_down.width = btn_down.rectTransform.rect.width;
+        rect_down.height = btn_down.rectTransform.rect.height;
+    }
+
+    bool check_btn_left(float x, float y)
+    {
+        float x1 = rect_left.x;
+        float y1 = rect_left.y;
+        float x2 = x1 + rect_left.width;
+        float y2 = y1 - rect_left.height;
+
+        pos_x1.text = x1.ToString();
+        pos_y1.text = y1.ToString();
+        pos_x2.text = x2.ToString();
+        pos_y2.text = y2.ToString();
+
+        if(x < x1)  return false;
+        if(x > x2)  return false;
+        if(y < y1)  return false;
+        if(y > y2)  return false;
+
+        return true;
+    }
 
     private void Update ()
     {
-        var hit = new RaycastHit ();
- 
         cnt = Input.touchCount;
-        if(cnt != old_cnt)
-        {
-            print(cnt);
-            text.text = "Cnt: " + cnt.ToString ();
-            old_cnt = cnt;
-        }
-
         if(cnt != 0)
         {
-            for (int i = 0; i < Input.touchCount; ++i)
+            for (int i = 0; i < cnt; ++i)
             {
                 //float x = Input.GetTouch (i).position.x - 1280f / 2f;
                 //float y = Input.GetTouch (i).position.y - 720f / 2f;
                 float x = Input.GetTouch (i).position.x - Screen.width / 2f;
                 float y = Input.GetTouch (i).position.y - Screen.height / 2f;
-                print("i: " + i.ToString());
-                print("pos.x " + x);
-                print("pos.y " + y);
+                pos_x.text = x.ToString();
+                pos_y.text = y.ToString();
 
-                //Vector3 pos = Camera.main.ScreenToWorldPoint(Input.GetTouch (i).position); 
-                //Vector3 pos = Camera.main.WorldToScreenPoint(Input.GetTouch (i).position); 
-                //print("pos.x " + pos.x);
-                //print("pos.y " + pos.y);
-
-                // if (Input.GetTouch (i).phase.Equals (TouchPhase.Began))
-                // {
-                //     // Construct a ray from the current touch coordinates.
-                //     Ray ray = Camera.main.ScreenPointToRay (Input.GetTouch (i).position);
-    
-                //     if (Physics.Raycast (ray, out hit))
-                //     {
-                //         hit.transform.gameObject.SendMessage ("OnMouseDown");
-                //         print("pos.x " + hit.transform.position.x);
-                //         print("pos.y " + hit.transform.position.y);
-                //     }
-                // }
+                if(check_btn_left(x, y))
+                {
+                    print("Btn_left click");
+                }
             }
         }
     }
