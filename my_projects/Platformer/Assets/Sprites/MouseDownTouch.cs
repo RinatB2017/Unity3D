@@ -8,26 +8,28 @@ public class MouseDownTouch : MonoBehaviour
 {
     private int cnt = -1;
 
-    public Text pos_x;
-    public Text pos_y;
-
-    public Text pos_x1;
-    public Text pos_y1;
-    public Text pos_x2;
-    public Text pos_y2;
+    public Rigidbody2D rigidbody2D;
+    public float speed = 0.1f;
+    private bool f_left  = false;
+    private bool f_right = false;
+    private bool f_up    = false;
+    private bool f_down  = false;
 
     public Image btn_left;
     public Image btn_right;
     public Image btn_up;
     public Image btn_down;
 
-    public Rect rect_left;
-    public Rect rect_right;
-    public Rect rect_up;
-    public Rect rect_down;
+    private Rect rect_left;
+    private Rect rect_right;
+    private Rect rect_up;
+    private Rect rect_down;
 
     void Awake()
     {
+        print("width  " + Screen.width);
+        print("height " + Screen.height);
+
         rect_left.x = btn_left.rectTransform.localPosition.x;
         rect_left.y = btn_left.rectTransform.localPosition.y;
         rect_left.width = btn_left.rectTransform.rect.width;
@@ -56,16 +58,12 @@ public class MouseDownTouch : MonoBehaviour
         float x2 = x1 + rect_left.width;
         float y2 = y1 - rect_left.height;
 
-        pos_x1.text = x1.ToString();
-        pos_y1.text = y1.ToString();
-        pos_x2.text = x2.ToString();
-        pos_y2.text = y2.ToString();
-
         if(x < x1)  return false;
         if(x > x2)  return false;
-        if(y < y1)  return false;
-        if(y > y2)  return false;
+        if(y > y1)  return false;
+        if(y < y2)  return false;
 
+        print("click left");
         return true;
     }
     
@@ -78,9 +76,10 @@ public class MouseDownTouch : MonoBehaviour
 
         if(x < x1)  return false;
         if(x > x2)  return false;
-        if(y < y1)  return false;
-        if(y > y2)  return false;
+        if(y > y1)  return false;
+        if(y < y2)  return false;
 
+        print("click right");
         return true;
     }
 
@@ -93,9 +92,10 @@ public class MouseDownTouch : MonoBehaviour
 
         if(x < x1)  return false;
         if(x > x2)  return false;
-        if(y < y1)  return false;
-        if(y > y2)  return false;
+        if(y > y1)  return false;
+        if(y < y2)  return false;
 
+        print("click up");
         return true;
     }
 
@@ -108,31 +108,63 @@ public class MouseDownTouch : MonoBehaviour
 
         if(x < x1)  return false;
         if(x > x2)  return false;
-        if(y < y1)  return false;
-        if(y > y2)  return false;
+        if(y > y1)  return false;
+        if(y < y2)  return false;
 
+        print("click down");
         return true;
     }
 
-    private void Update ()
+    //float x = Input.GetTouch (i).position.x - 1280f / 2f;
+    //float y = Input.GetTouch (i).position.y - 720f / 2f;
+    private void check_touch()
     {
         cnt = Input.touchCount;
         if(cnt != 0)
         {
+            bool temp_left  = false;
+            bool temp_right = false;
+            bool temp_up    = false;
+            bool temp_down  = false;
+
             for (int i = 0; i < cnt; ++i)
             {
-                //float x = Input.GetTouch (i).position.x - 1280f / 2f;
-                //float y = Input.GetTouch (i).position.y - 720f / 2f;
                 float x = Input.GetTouch (i).position.x - Screen.width / 2f;
                 float y = Input.GetTouch (i).position.y - Screen.height / 2f;
-                pos_x.text = x.ToString();
-                pos_y.text = y.ToString();
 
-                if(check_btn_left(x, y))
-                {
-                    print("Btn_left click");
-                }
+                temp_left   = check_btn_left(x, y);
+                temp_right  = check_btn_right(x, y);
+                temp_up     = check_btn_up(x, y);
+                temp_down   = check_btn_down(x, y);
             }
+            f_left  = temp_left;
+            f_right = temp_right;
+            f_up    = temp_up;
+            f_down  = temp_down;
         }
+    }
+
+    void moving_mace()
+    {
+        Vector2 position = rigidbody2D.transform.position;
+        if(f_left)  position.x = position.x - speed;
+        if(f_right) position.x = position.x + speed;
+        if(f_up)    position.y = position.y + speed;
+        if(f_down)  position.y = position.y - speed;
+
+        float horizontal = Input.GetAxis("Horizontal");
+        float vertical = Input.GetAxis("Vertical");
+        if(horizontal < 0) position.x = position.x - speed;
+        if(horizontal > 0) position.x = position.x + speed;
+        if(vertical < 0)   position.y = position.y - speed;
+        if(vertical > 0)   position.y = position.y + speed;
+
+        rigidbody2D.MovePosition(position);
+    }
+
+    void Update ()
+    {
+        check_touch();
+        moving_mace();
     }
 }

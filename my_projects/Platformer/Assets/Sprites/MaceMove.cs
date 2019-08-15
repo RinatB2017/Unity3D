@@ -9,7 +9,7 @@ public class MaceMove : MonoBehaviour
     public float min_x = -5f;
     public float max_x = 5f;
 
-    Rigidbody2D rigidbody2D;
+    public Rigidbody2D rigidbody2D;
 
     void Start()
     {
