@@ -68,6 +68,51 @@ public class MouseDownTouch : MonoBehaviour
 
         return true;
     }
+    
+    bool check_btn_right(float x, float y)
+    {
+        float x1 = rect_right.x;
+        float y1 = rect_right.y;
+        float x2 = x1 + rect_right.width;
+        float y2 = y1 - rect_right.height;
+
+        if(x < x1)  return false;
+        if(x > x2)  return false;
+        if(y < y1)  return false;
+        if(y > y2)  return false;
+
+        return true;
+    }
+
+    bool check_btn_up(float x, float y)
+    {
+        float x1 = rect_up.x;
+        float y1 = rect_up.y;
+        float x2 = x1 + rect_up.width;
+        float y2 = y1 - rect_up.height;
+
+        if(x < x1)  return false;
+        if(x > x2)  return false;
+        if(y < y1)  return false;
+        if(y > y2)  return false;
+
+        return true;
+    }
+
+    bool check_btn_down(float x, float y)
+    {
+        float x1 = rect_down.x;
+        float y1 = rect_down.y;
+        float x2 = x1 + rect_down.width;
+        float y2 = y1 - rect_down.height;
+
+        if(x < x1)  return false;
+        if(x > x2)  return false;
+        if(y < y1)  return false;
+        if(y > y2)  return false;
+
+        return true;
+    }
 
     private void Update ()
     {
