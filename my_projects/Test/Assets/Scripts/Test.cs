@@ -11,11 +11,9 @@ public class Test : MonoBehaviour
 
     private Vector3 old_position;
     private Vector3 new_position;
-    
-    void Start()
-    {
-        print("Test started!");
 
+    void check_vectors()
+    {
         old_position = new Vector3(0, 0, 0);
         new_position = new Vector3(0, 0, 1);
 
@@ -24,13 +22,30 @@ public class Test : MonoBehaviour
             print("No");
         }
     }
+    
+    void Start()
+    {
+        print("Test started!");
+    }
 
     void Update()
     {
         if(flag)
         {
-            rb.AddForce(transform.right * thrust);
+            Vector3 force = new Vector3(50f, 50f, 0);
+            rb.AddForce(force);
+            //rb.AddForce(transform.right * thrust);
             flag = false;
+        }
+        if(rb.transform.position.y > 5)
+        {
+            flag = true;
+            if(flag)
+            {
+                Vector3 force = new Vector3(50f, -50f, 0);
+                rb.AddForce(force);
+                flag = false;
+            }
         }
     }
 }
