@@ -185,8 +185,8 @@ public class MouseDownTouch : MonoBehaviour
         if(old_position != new_position)
         {
             old_position = new_position;
-            rigidbody2D.MovePosition(new_position);
-            //rigidbody2D.velocity = new_position;
+            //rigidbody2D.MovePosition(new_position);
+            rigidbody2D.AddForce(new_position);
         }
     }
 
