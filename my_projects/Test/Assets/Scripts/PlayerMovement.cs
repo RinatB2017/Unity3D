@@ -57,6 +57,10 @@ public class PlayerMovement : MonoBehaviour
         new_position.x = horizontalMove;
         new_position.y = verticalMove;
 
-        rigidbody2D.MovePosition(new_position);
+        if(old_position != new_position)
+        {
+            old_position = new_position;
+            rigidbody2D.MovePosition(new_position);
+        }
     }
 }
