@@ -22,21 +22,24 @@ public class MouseDownTouch : MonoBehaviour
     private int s_width = 0;
     private int s_height = 0;
 
-    public Text info;
+    public Text info_1;
+    public Text info_2;
+    public Text info_3;
+    public Text info_4;
 
     public Image btn_left;
     public Image btn_right;
     public Image btn_up;
     public Image btn_down;
 
-    private Rect rect_left;
-    private Rect rect_right;
-    private Rect rect_up;
-    private Rect rect_down;
+    public Rect rect_left;
+    public Rect rect_right;
+    public Rect rect_up;
+    public Rect rect_down;
 
     void debug_print(string text)
     {
-        print(text);
+        //print(text);
     }
 
     void Awake()
@@ -134,66 +137,137 @@ public class MouseDownTouch : MonoBehaviour
         return true;
     }
 
+    bool is_pressed_left()
+    {
+        cnt = Input.touchCount;
+        if(cnt == 0)
+        {
+            return false;
+        }
+        Touch[] myTouch = Input.touches;
+        float x = 0f;
+        float y = 0f;
+        for (int i = 0; i < cnt; ++i)
+        {
+            x = myTouch[i].position.x - s_width / 2f;
+            y = myTouch[i].position.y - s_height / 2f;
+
+            if(check_btn_left(x, y)) return true;
+        }        
+        return false;
+    }
+
+    bool is_pressed_right()
+    {
+        cnt = Input.touchCount;
+        if(cnt == 0)
+        {
+            return false;
+        }
+        Touch[] myTouch = Input.touches;
+        float x = 0f;
+        float y = 0f;
+        for (int i = 0; i < cnt; ++i)
+        {
+            x = myTouch[i].position.x - s_width / 2f;
+            y = myTouch[i].position.y - s_height / 2f;
+
+            if(check_btn_right(x, y)) return true;
+        }        
+        return false;
+    }
+
+    bool is_pressed_up()
+    {
+        cnt = Input.touchCount;
+        if(cnt == 0)
+        {
+            return false;
+        }
+        Touch[] myTouch = Input.touches;
+        float x = 0f;
+        float y = 0f;
+        for (int i = 0; i < cnt; ++i)
+        {
+            x = myTouch[i].position.x - s_width / 2f;
+            y = myTouch[i].position.y - s_height / 2f;
+
+            if(check_btn_up(x, y)) return true;
+        }        
+        return false;
+    }
+
+    bool is_pressed_down()
+    {
+        cnt = Input.touchCount;
+        if(cnt == 0)
+        {
+            return false;
+        }
+        Touch[] myTouch = Input.touches;
+        float x = 0f;
+        float y = 0f;
+        for (int i = 0; i < cnt; ++i)
+        {
+            x = myTouch[i].position.x - s_width / 2f;
+            y = myTouch[i].position.y - s_height / 2f;
+
+            if(check_btn_down(x, y)) return true;
+        }        
+        return false;
+    }
+
     //float x = Input.GetTouch (i).position.x - 1280f / 2f;
     //float y = Input.GetTouch (i).position.y - 720f / 2f;
     private void check_touch()
     {
-        cnt = Input.touchCount;
-        info.text = "Cnt: " + cnt;
-        if(cnt != 0)
-        {
-            bool temp_left  = false;
-            bool temp_right = false;
-            bool temp_up    = false;
-            bool temp_down  = false;
+        f_left  = is_pressed_left();
+        f_right = is_pressed_right();
+        f_up    = is_pressed_up();
+        f_down  = is_pressed_down();
 
-            Touch[] myTouch = Input.touches;
-            for (int i = 0; i < cnt; ++i)
-            {
-                // float x = Input.GetTouch (i).position.x - s_width / 2f;
-                // float y = Input.GetTouch (i).position.y - s_height / 2f;
-                float x = myTouch[i].position.x - s_width / 2f;
-                float y = myTouch[i].position.y - s_height / 2f;
+        info_1.text = f_left  ? "Down" : "Up";
+        info_2.text = f_right ? "Down" : "Up";
+        info_3.text = f_up    ? "Down" : "Up";
+        info_4.text = f_down  ? "Down" : "Up";
 
-                temp_left   = check_btn_left(x, y);
-                temp_right  = check_btn_right(x, y);
-                temp_up     = check_btn_up(x, y);
-                temp_down   = check_btn_down(x, y);
-            }
-            f_left  = temp_left;
-            f_right = temp_right;
-            f_up    = temp_up;
-            f_down  = temp_down;
-        }
-    }
-
-    void moving_mace()
-    {
-        //Vector2 position = rigidbody2D.transform.position;
         if(f_left)  new_position.x = new_position.x - speed;
         if(f_right) new_position.x = new_position.x + speed;
         if(f_up)    new_position.y = new_position.y + speed;
         if(f_down)  new_position.y = new_position.y - speed;
+    }
 
+    void check_keyboard()
+    {
         float horizontal = Input.GetAxis("Horizontal");
         float vertical = Input.GetAxis("Vertical");
         if(horizontal < 0) new_position.x = new_position.x - speed;
         if(horizontal > 0) new_position.x = new_position.x + speed;
         if(vertical < 0)   new_position.y = new_position.y - speed;
         if(vertical > 0)   new_position.y = new_position.y + speed;
+    }
+
+    void moving_mace()
+    {
+        if(new_position.x < -6) new_position.x = -6;
+        if(new_position.x > 6)  new_position.x = 6;
+        if(new_position.y < -3) new_position.y = -3;
+        if(new_position.y > 3)  new_position.y = 3;
 
         if(old_position != new_position)
         {
+            debug_print(new_position.x.ToString() + " : " + new_position.y.ToString());
             old_position = new_position;
-            //rigidbody2D.MovePosition(new_position);
-            rigidbody2D.AddForce(new_position);
+            rigidbody2D.MovePosition(new_position);
+            //rigidbody2D.AddForce(new_position);
         }
     }
 
-    //void Update ()
-    void FixedUpdate ()
+    void Update ()
+    //void FixedUpdate ()
     {
         check_touch();
+        check_keyboard();
         moving_mace();
     }
 }
