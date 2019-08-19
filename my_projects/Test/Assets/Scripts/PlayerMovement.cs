@@ -51,11 +51,14 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
-        horizontalMove = joystick.Horizontal * runSpeed;
-        verticalMove = joystick.Vertical * runSpeed;
+        horizontalMove  = joystick.Horizontal * runSpeed;
+        verticalMove    = joystick.Vertical * runSpeed;
 
         new_position.x = horizontalMove;
         new_position.y = verticalMove;
+
+        // new_position.x += horizontalMove;
+        // new_position.y += verticalMove;
 
         if(old_position != new_position)
         {

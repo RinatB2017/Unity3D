@@ -225,7 +225,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 013fc10a0178d425bb1431133facf587, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  runSpeed: 10
+  runSpeed: 1
   rigidbody2D: {fileID: 144879574}
   joystick: {fileID: 972369421}
 --- !u!1 &517061299

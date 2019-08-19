@@ -9,6 +9,13 @@ public class MouseDownTouch : MonoBehaviour
 {
     private int cnt = -1;
     
+    public Joystick joystick;
+
+    float horizontalMove = 0f;
+    float verticalMove = 0f;
+
+    public float runSpeed = 40f;
+
     private Vector2 old_position;
     private Vector2 new_position;
 
@@ -249,10 +256,10 @@ public class MouseDownTouch : MonoBehaviour
 
     void moving_mace()
     {
-        if(new_position.x < -6) new_position.x = -6;
-        if(new_position.x > 6)  new_position.x = 6;
-        if(new_position.y < -3) new_position.y = -3;
-        if(new_position.y > 3)  new_position.y = 3;
+        // if(new_position.x < -6) new_position.x = -6;
+        // if(new_position.x > 6)  new_position.x = 6;
+        // if(new_position.y < -3) new_position.y = -3;
+        // if(new_position.y > 3)  new_position.y = 3;
 
         if(old_position != new_position)
         {
@@ -263,11 +270,21 @@ public class MouseDownTouch : MonoBehaviour
         }
     }
 
+    void check_joystick()
+    {
+        horizontalMove  = joystick.Horizontal * runSpeed;
+        verticalMove    = joystick.Vertical * runSpeed;
+
+        new_position.x += horizontalMove;
+        new_position.y += verticalMove;
+    }
+
     void Update ()
     //void FixedUpdate ()
     {
-        check_touch();
-        check_keyboard();
+        check_joystick();
+        //check_touch();
+        //check_keyboard();
         moving_mace();
     }
 }
