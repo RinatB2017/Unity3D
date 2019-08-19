@@ -11,9 +11,8 @@ GameObject:
   - component: {fileID: 2884340766068344457}
   - component: {fileID: 2884340766068344458}
   - component: {fileID: 2884340766068344459}
-  - component: {fileID: 2884340766068344460}
   m_Layer: 0
-  m_Name: Btn_1
+  m_Name: Mace
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -108,16 +107,3 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &2884340766068344460
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2884340766068344461}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e7cdd26f84e7ad1f6a1f3b8bb712f431, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  s_name: 1
