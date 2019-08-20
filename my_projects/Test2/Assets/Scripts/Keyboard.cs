@@ -12,6 +12,11 @@ public class Keyboard : MonoBehaviour
     private bool f_up    = false;
     private bool f_down  = false;
 
+    private string n_left   = "left";
+    private string n_right  = "right";
+    private string n_up     = "up";
+    private string n_down   = "down";
+
     private int s_width = 0;
     private int s_height = 0;
 
@@ -20,8 +25,10 @@ public class Keyboard : MonoBehaviour
     public Text info_3;
     public Text info_4;
 
-    public List<Image> lists;
-    public List<Rect>  rects;
+    public List<Image>  lists;
+    public List<Rect>   rects;
+
+    public GameObject   player;
 
     void debug_print(string text)
     {
@@ -59,7 +66,6 @@ public class Keyboard : MonoBehaviour
         if(y > y1)  return false;
         if(y < y2)  return false;
 
-        debug_print("click left");
         return true;
     }
 
@@ -90,14 +96,30 @@ public class Keyboard : MonoBehaviour
         f_up    = is_pressed(rects[2]);
         f_down  = is_pressed(rects[3]);
 
+        if(f_left)  player.SendMessage(n_left);
+        if(f_right) player.SendMessage(n_right);
+        if(f_up)    player.SendMessage(n_up);
+        if(f_down)  player.SendMessage(n_down);
+
         info_1.text = f_left  ? "Down" : "Up";
         info_2.text = f_right ? "Down" : "Up";
         info_3.text = f_up    ? "Down" : "Up";
         info_4.text = f_down  ? "Down" : "Up";
     }
 
+    private void check_keys()
+    {
+        float horizontal = Input.GetAxis("Horizontal");
+        float vertical = Input.GetAxis("Vertical");
+        if(horizontal < 0)  player.SendMessage(n_left);
+        if(horizontal > 0)  player.SendMessage(n_right);
+        if(vertical > 0)    player.SendMessage(n_up);
+        if(vertical < 0)    player.SendMessage(n_down);
+    }
+
     void Update ()
     {
         check_touch();
+        check_keys();
     }
 }
