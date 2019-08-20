@@ -12,20 +12,12 @@ public class Keyboard : MonoBehaviour
     private bool f_up    = false;
     private bool f_down  = false;
 
-    private string n_left   = "left";
-    private string n_right  = "right";
-    private string n_up     = "up";
-    private string n_down   = "down";
-
     private int s_width = 0;
     private int s_height = 0;
 
-    public Text info_1;
-    public Text info_2;
-    public Text info_3;
-    public Text info_4;
-
-    public List<Image>  lists;
+    public List<Image>  buttons;
+    public List<string> f_names;
+    public List<Text>   t_info;
     public List<Rect>   rects;
 
     public GameObject   player;
@@ -42,13 +34,13 @@ public class Keyboard : MonoBehaviour
         debug_print("width  " + s_width);
         debug_print("height " + s_height);
 
-        for(int i=0; i<lists.Count; i++)
+        for(int i=0; i<buttons.Count; i++)
         {
             Rect rect = rects[i]; 
-            rect.x = lists[i].rectTransform.localPosition.x;
-            rect.y = lists[i].rectTransform.localPosition.y;
-            rect.width = lists[i].rectTransform.rect.width;
-            rect.height = lists[i].rectTransform.rect.height;
+            rect.x = buttons[i].rectTransform.localPosition.x;
+            rect.y = buttons[i].rectTransform.localPosition.y;
+            rect.width = buttons[i].rectTransform.rect.width;
+            rect.height = buttons[i].rectTransform.rect.height;
             // нельзя напрямую копировать из списка в список - нужен промежуточный объект
             rects[i] = rect;
         }
@@ -89,32 +81,42 @@ public class Keyboard : MonoBehaviour
         return false;
     }
 
-    private void check_touch()
+    private void check_touch2()
     {
         f_left  = is_pressed(rects[0]);
         f_right = is_pressed(rects[1]);
         f_up    = is_pressed(rects[2]);
         f_down  = is_pressed(rects[3]);
 
-        if(f_left)  player.SendMessage(n_left);
-        if(f_right) player.SendMessage(n_right);
-        if(f_up)    player.SendMessage(n_up);
-        if(f_down)  player.SendMessage(n_down);
+        if(f_left)  player.SendMessage(f_names[0]);
+        if(f_right) player.SendMessage(f_names[1]);
+        if(f_up)    player.SendMessage(f_names[2]);
+        if(f_down)  player.SendMessage(f_names[3]);
 
-        info_1.text = f_left  ? "Down" : "Up";
-        info_2.text = f_right ? "Down" : "Up";
-        info_3.text = f_up    ? "Down" : "Up";
-        info_4.text = f_down  ? "Down" : "Up";
+        t_info[0].text = f_left  ? "Down" : "Up";
+        t_info[1].text = f_right ? "Down" : "Up";
+        t_info[2].text = f_up    ? "Down" : "Up";
+        t_info[3].text = f_down  ? "Down" : "Up";
+    }
+
+    private void check_touch()
+    {
+        for(int n=0; n<4; n++)
+        {
+            bool flag = is_pressed(rects[n]);
+            if(flag) player.SendMessage(f_names[n]);
+            t_info[n].text = flag ? "Down" : "Up";
+        }
     }
 
     private void check_keys()
     {
         float horizontal = Input.GetAxis("Horizontal");
-        float vertical = Input.GetAxis("Vertical");
-        if(horizontal < 0)  player.SendMessage(n_left);
-        if(horizontal > 0)  player.SendMessage(n_right);
-        if(vertical > 0)    player.SendMessage(n_up);
-        if(vertical < 0)    player.SendMessage(n_down);
+        float vertical   = Input.GetAxis("Vertical");
+        if(horizontal < 0)  player.SendMessage(f_names[0]);
+        if(horizontal > 0)  player.SendMessage(f_names[1]);
+        if(vertical > 0)    player.SendMessage(f_names[2]);
+        if(vertical < 0)    player.SendMessage(f_names[3]);
     }
 
     void Update ()

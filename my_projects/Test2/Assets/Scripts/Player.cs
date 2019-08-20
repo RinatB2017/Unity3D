@@ -29,6 +29,11 @@ public class Player : MonoBehaviour
         new_position.y = new_position.y - speed;
     }
 
+    void kill()
+    {
+        Destroy(this.gameObject);
+    }
+
     void Awake()
     {
         old_position = new Vector2(0, 0);

@@ -149,15 +149,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fafb3022dd68304ae853d9925f5038a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  info_1: {fileID: 1018381347}
-  info_2: {fileID: 1790743378}
-  info_3: {fileID: 1260084898}
-  info_4: {fileID: 1614417604}
-  lists:
+  buttons:
   - {fileID: 1647807489}
   - {fileID: 2042446381}
   - {fileID: 1642118998}
   - {fileID: 483322267}
+  f_names:
+  - left
+  - right
+  - up
+  - down
+  t_info:
+  - {fileID: 1018381347}
+  - {fileID: 1790743378}
+  - {fileID: 1260084898}
+  - {fileID: 1614417604}
   rects:
   - serializedVersion: 2
     x: 0
@@ -570,6 +576,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 636030439}
+  speed: 0.1
 --- !u!1 &1018381345
 GameObject:
   m_ObjectHideFlags: 0
