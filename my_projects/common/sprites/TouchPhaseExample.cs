@@ -1,7 +1,8 @@
 using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
 
-public class TouchPhase : MonoBehaviour
+public class TouchPhaseExample : MonoBehaviour
 {
     void Update()
     {
@@ -16,16 +17,19 @@ public class TouchPhase : MonoBehaviour
                 // Record initial touch position.
                 case TouchPhase.Began:
                     print("Began");
+                    print(touch.position.x + ":" + touch.position.y);
                     break;
 
                 // Determine direction by comparing the current touch position with the initial one.
                 case TouchPhase.Moved:
                     print("Moved");
+                    print(touch.position.x + ":" + touch.position.y);
                     break;
 
                 // Report that a direction has been chosen when the finger is lifted.
                 case TouchPhase.Ended:
                     print("Ended");
+                    print(touch.position.x + ":" + touch.position.y);
                     break;
             }
         }
