@@ -23,14 +23,15 @@
 using UnityEngine;
 using System.Collections;
 
-public class BasicMovement : MonoBehaviour {
-
+public class BasicMovement : MonoBehaviour 
+{
   private Rigidbody2D objectRigidbody;
   public float speed;
 
   // Use this for initialization
-  void Start () {
-	objectRigidbody = transform.GetComponent<Rigidbody2D>();
-	objectRigidbody.velocity = transform.up * speed;
+  void Start () 
+  {
+    objectRigidbody = transform.GetComponent<Rigidbody2D>();
+	  objectRigidbody.velocity = transform.up * speed;
   }
 }

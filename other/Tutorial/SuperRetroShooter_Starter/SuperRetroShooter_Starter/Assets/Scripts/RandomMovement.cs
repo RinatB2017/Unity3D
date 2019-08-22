@@ -23,8 +23,8 @@
 using UnityEngine;
 using System.Collections;
 
-public class RandomMovement : MonoBehaviour {
-
+public class RandomMovement : MonoBehaviour 
+{
 	public float moveSpeed = 5.0f;
 
 	private float maxX;
@@ -36,16 +36,19 @@ public class RandomMovement : MonoBehaviour {
 	private float randomX;
 	private float randomY;
 
-  void Start () {
-    maxX = GameController.SharedInstance.rightBoundary.transform.position.x;
-    minX = GameController.SharedInstance.leftBoundary.transform.position.x;
-    maxY = GameController.SharedInstance.topBoundary.transform.position.y;
-    minY = GameController.SharedInstance.bottomBoundary.transform.position.y;
-  }
+	void Start () 
+	{
+    	maxX = GameController.SharedInstance.rightBoundary.transform.position.x;
+    	minX = GameController.SharedInstance.leftBoundary.transform.position.x;
+    	maxY = GameController.SharedInstance.topBoundary.transform.position.y;
+    	minY = GameController.SharedInstance.bottomBoundary.transform.position.y;
+  	}
 
-	void Update() {
+	void Update() 
+	{
 		// change to a new random direction at random intervals
-		if (Time.time >= tChange) {
+		if (Time.time >= tChange) 
+		{
 			randomX = Random.Range(-2.0f, 2.0f);
 			randomY = Random.Range(-2.0f, 2.0f); //  between -2.0 and 2.0 is returned
 			// set a random interval between 0.5 and 1.5
@@ -54,10 +57,12 @@ public class RandomMovement : MonoBehaviour {
 		Vector3 newPosition = new Vector3(randomX, randomY, 0);
 		transform.Translate(newPosition * moveSpeed * Time.deltaTime);
 		// if any boundary is hit, change direction.
-		if (transform.position.x >= maxX || transform.position.x <= minX) {
+		if (transform.position.x >= maxX || transform.position.x <= minX) 
+		{
 			randomX = -randomX;
 		}
-		if (transform.position.y >= maxY || transform.position.y <= minY) {
+		if (transform.position.y >= maxY || transform.position.y <= minY) 
+		{
 			randomY = -randomY;
 		}
 		Vector3 clampedPosition = transform.position;
