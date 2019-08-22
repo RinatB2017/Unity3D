@@ -8,6 +8,12 @@ public class Test : MonoBehaviour
     float w_sprite = 1024;
     float h_sprite = 768;
 
+    // public enum BoundaryLocation 
+	// { 
+	// 	LEFT, TOP, RIGHT, BOTTOM
+	// };
+	// public BoundaryLocation direction;
+
     public Rigidbody2D sprite_R;
     public Rigidbody2D sprite_G;
     public Rigidbody2D sprite_B;
@@ -46,6 +52,9 @@ public class Test : MonoBehaviour
         debug_print("R: pos_y " + sprite_R.transform.position.y);
         debug_print("G: pos_y " + sprite_G.transform.position.y);
         debug_print("B: pos_y " + sprite_B.transform.position.y);
+
+        debug_print("W: " + Camera.main.pixelWidth);
+        debug_print("H: " + Camera.main.pixelHeight);
     }
 
     void Update()

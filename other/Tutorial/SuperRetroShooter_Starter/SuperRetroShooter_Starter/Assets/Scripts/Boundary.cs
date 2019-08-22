@@ -42,10 +42,10 @@ public class Boundary : MonoBehaviour
 	{
 		// Get the the world coordinates of the corners of the camera viewport.
 
-		Vector3 topLeft = Camera.main.ScreenToWorldPoint(new Vector3(0, Camera.main.pixelHeight, 0));
-		Vector3 topRight = Camera.main.ScreenToWorldPoint(new Vector3(Camera.main.pixelWidth, Camera.main.pixelHeight, 0));
-		Vector3 lowerLeft = Camera.main.ScreenToWorldPoint(new Vector3(0, 0, 0));
-		Vector3 lowerRight = Camera.main.ScreenToWorldPoint(new Vector3(Camera.main.pixelWidth, 0, 0));
+		Vector3 topLeft 	= Camera.main.ScreenToWorldPoint(new Vector3(0, Camera.main.pixelHeight, 0));
+		Vector3 topRight 	= Camera.main.ScreenToWorldPoint(new Vector3(Camera.main.pixelWidth, Camera.main.pixelHeight, 0));
+		Vector3 lowerLeft 	= Camera.main.ScreenToWorldPoint(new Vector3(0, 0, 0));
+		Vector3 lowerRight	= Camera.main.ScreenToWorldPoint(new Vector3(Camera.main.pixelWidth, 0, 0));
 
 		// Get this game objects BoxCollider2D
 
