@@ -5,6 +5,7 @@ using UnityEngine;
 public class Dropper : MonoBehaviour
 {
     public Transform prefab;
+    public float delay_sec = 1.5f;
 
     private IEnumerator coroutine;
 
@@ -18,11 +19,9 @@ public class Dropper : MonoBehaviour
 	{
         while (true)
         {
-            Vector3 temp_vector = new Vector3(Random.Range(-3.0f, 3.0f), 
-                                            4f,
-                                            0);
+            Vector3 temp_vector = new Vector3(Random.Range(-2.0f, 2.0f), 4f, 0);
             Instantiate(prefab, temp_vector, Quaternion.identity);
-            yield return new WaitForSeconds(1.5f);
+            yield return new WaitForSeconds(delay_sec);
         }
     }
 

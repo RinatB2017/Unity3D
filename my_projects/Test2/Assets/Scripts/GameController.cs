@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class GameController : MonoBehaviour
 {
-  	public GameObject leftBoundary;
-  	public GameObject rightBoundary;
-  	public GameObject topBoundary;
-  	public GameObject bottomBoundary;
+    public GameObject leftBoundary;
+    public GameObject rightBoundary;
+    public GameObject topBoundary;
+    public GameObject bottomBoundary;
 
     void Start()
     {
