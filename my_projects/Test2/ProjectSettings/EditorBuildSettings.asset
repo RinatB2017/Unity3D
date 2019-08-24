@@ -11,4 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Test_moving.unity
     guid: 906f3b3387e6ed1899a0b0bb62bc35b0
+  - enabled: 1
+    path: Assets/Scenes/Test_rolling.unity
+    guid: bccc9618c4cff462c878c792a95073a7
   m_configObjects: {}
