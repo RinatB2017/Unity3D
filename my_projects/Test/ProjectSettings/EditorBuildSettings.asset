@@ -17,4 +17,22 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Test_rolling.unity
     guid: bccc9618c4cff462c878c792a95073a7
+  - enabled: 1
+    path: Assets/Scenes/Test_dropping.unity
+    guid: cef872ae8d439cd7e99062f8f30b2418
+  - enabled: 1
+    path: Assets/Scenes/Test_gravity.unity
+    guid: 7678590a39604c0c3805ba31af020d3c
+  - enabled: 1
+    path: Assets/Scenes/Test_keyboard.unity
+    guid: faae1ea517a13a62f981ad9e8acf1479
+  - enabled: 1
+    path: Assets/Scenes/Test_moving.unity
+    guid: 906f3b3387e6ed1899a0b0bb62bc35b0
+  - enabled: 1
+    path: Assets/Scenes/Test_touchphase.unity
+    guid: a75c5d04bad006f2db32f3f948c4159d
+  - enabled: 1
+    path: Assets/Scenes/Test_mass.unity
+    guid: 8260e4f64bf002371b7a0b7d1b17a41a
   m_configObjects: {}
