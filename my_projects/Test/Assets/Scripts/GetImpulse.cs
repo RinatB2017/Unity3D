@@ -13,12 +13,11 @@ public class GetImpulse : MonoBehaviour
     }
 
     void OnTriggerEnter2D(Collider2D other) 
+    {
+        if (other.gameObject.tag == "Ball") 
 	{
-		if (other.gameObject.tag == "Ball") 
-		{
             Rigid = other.GetComponent<Rigidbody2D>();
-
             Rigid.AddForce(m_NewForce, ForceMode2D.Impulse);
         }
-	}
+    }
 }
