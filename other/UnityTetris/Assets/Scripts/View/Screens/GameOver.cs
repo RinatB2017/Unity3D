@@ -1,4 +1,4 @@
-﻿public class GameOver : ScoreScreenType<GameOver> {
+public class GameOver : ScoreScreenType<GameOver> {
 
 	public override void ShowScreen(float timeToTween = TIME_TO_TWEEN)
 	{

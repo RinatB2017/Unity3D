@@ -1,4 +1,4 @@
-﻿using pooling;
+using pooling;
 using UnityEngine;
 
 //Single block from pieces in view

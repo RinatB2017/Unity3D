@@ -1,4 +1,4 @@
-﻿namespace pooling
+namespace pooling
 {
     public interface IPooling
     {

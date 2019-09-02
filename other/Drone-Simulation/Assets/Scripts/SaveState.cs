@@ -1,4 +1,4 @@
-﻿public class SaveState
+public class SaveState
 {
     public int gold =0;
     public int completedLevel = 0;
