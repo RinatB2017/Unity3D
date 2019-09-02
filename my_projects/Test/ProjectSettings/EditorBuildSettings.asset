@@ -6,6 +6,12 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/Test_balls.unity
+    guid: a490ca2720774a62494e9a57d6e69621
+  - enabled: 1
+    path: Assets/Scenes/Test_impulse.unity
+    guid: d7e060a469b5a7e81b1f4baef8538dcd
+  - enabled: 1
     path: Assets/Scenes/Test_state.unity
     guid: 5d89ebda92f8e6a9ea3553802b6df646
   - enabled: 1
@@ -35,7 +41,4 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Test_mass.unity
     guid: 8260e4f64bf002371b7a0b7d1b17a41a
-  - enabled: 1
-    path: Assets/Scenes/Test_impulse.unity
-    guid: d7e060a469b5a7e81b1f4baef8538dcd
   m_configObjects: {}
