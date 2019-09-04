@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/Test_pc_android.unity
+    guid: c25bc8bdf2ed193768cd7d3fe859adde
+  - enabled: 1
     path: Assets/Scenes/Test_balls.unity
     guid: a490ca2720774a62494e9a57d6e69621
   - enabled: 1
