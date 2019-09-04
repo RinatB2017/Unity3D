@@ -12,7 +12,6 @@ public class Scene_1_Controller : MonoBehaviour
     {
         Singleton_Controller.Instance.increase_Score();
         score_Text.text = "Score : " + Singleton_Controller.Instance.score;
-
     }
 
     public void goto_Scene_2()
