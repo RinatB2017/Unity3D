@@ -65,8 +65,14 @@
  <Reference Include="com.unity.multiplayer-hlapi.Editor">
  <HintPath>/home/boss/Programming/_GitHub/Unity3D/other/Unity-Singleton/Source Project/Unity Singleton/Library/ScriptAssemblies/com.unity.multiplayer-hlapi.Editor.dll</HintPath>
  </Reference>
+ <Reference Include="Unity.VSCode.Editor">
+ <HintPath>/home/boss/Programming/_GitHub/Unity3D/other/Unity-Singleton/Source Project/Unity Singleton/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
+ </Reference>
  <Reference Include="Unity.TextMeshPro.Editor">
  <HintPath>/home/boss/Programming/_GitHub/Unity3D/other/Unity-Singleton/Source Project/Unity Singleton/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.UI">
+ <HintPath>/home/boss/Programming/_GitHub/Unity3D/other/Unity-Singleton/Source Project/Unity Singleton/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
  </Reference>
  <Reference Include="Unity.Timeline">
  <HintPath>/home/boss/Programming/_GitHub/Unity3D/other/Unity-Singleton/Source Project/Unity Singleton/Library/ScriptAssemblies/Unity.Timeline.dll</HintPath>
@@ -79,6 +85,15 @@
  </Reference>
  <Reference Include="UnityEngine.XR.LegacyInputHelpers">
  <HintPath>/home/boss/Programming/_GitHub/Unity3D/other/Unity-Singleton/Source Project/Unity Singleton/Library/ScriptAssemblies/UnityEngine.XR.LegacyInputHelpers.dll</HintPath>
+ </Reference>
+ <Reference Include="Unity.Rider.Editor">
+ <HintPath>/home/boss/Programming/_GitHub/Unity3D/other/Unity-Singleton/Source Project/Unity Singleton/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
+ </Reference>
+ <Reference Include="Unity.2D.Sprite.Editor">
+ <HintPath>/home/boss/Programming/_GitHub/Unity3D/other/Unity-Singleton/Source Project/Unity Singleton/Library/ScriptAssemblies/Unity.2D.Sprite.Editor.dll</HintPath>
+ </Reference>
+ <Reference Include="Unity.2D.Tilemap.Editor">
+ <HintPath>/home/boss/Programming/_GitHub/Unity3D/other/Unity-Singleton/Source Project/Unity Singleton/Library/ScriptAssemblies/Unity.2D.Tilemap.Editor.dll</HintPath>
  </Reference>
  <Reference Include="UnityEditor.SpatialTracking">
  <HintPath>/home/boss/Programming/_GitHub/Unity3D/other/Unity-Singleton/Source Project/Unity Singleton/Library/ScriptAssemblies/UnityEditor.SpatialTracking.dll</HintPath>
@@ -95,26 +110,11 @@
  <Reference Include="UnityEditor.XR.LegacyInputHelpers">
  <HintPath>/home/boss/Programming/_GitHub/Unity3D/other/Unity-Singleton/Source Project/Unity Singleton/Library/ScriptAssemblies/UnityEditor.XR.LegacyInputHelpers.dll</HintPath>
  </Reference>
- <Reference Include="com.unity.multiplayer-hlapi.Runtime">
- <HintPath>/home/boss/Programming/_GitHub/Unity3D/other/Unity-Singleton/Source Project/Unity Singleton/Library/ScriptAssemblies/com.unity.multiplayer-hlapi.Runtime.dll</HintPath>
- </Reference>
- <Reference Include="Unity.VSCode.Editor">
- <HintPath>/home/boss/Programming/_GitHub/Unity3D/other/Unity-Singleton/Source Project/Unity Singleton/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
- </Reference>
- <Reference Include="UnityEngine.UI">
- <HintPath>/home/boss/Programming/_GitHub/Unity3D/other/Unity-Singleton/Source Project/Unity Singleton/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
- </Reference>
- <Reference Include="Unity.Rider.Editor">
- <HintPath>/home/boss/Programming/_GitHub/Unity3D/other/Unity-Singleton/Source Project/Unity Singleton/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
- </Reference>
- <Reference Include="Unity.2D.Sprite.Editor">
- <HintPath>/home/boss/Programming/_GitHub/Unity3D/other/Unity-Singleton/Source Project/Unity Singleton/Library/ScriptAssemblies/Unity.2D.Sprite.Editor.dll</HintPath>
- </Reference>
- <Reference Include="Unity.2D.Tilemap.Editor">
- <HintPath>/home/boss/Programming/_GitHub/Unity3D/other/Unity-Singleton/Source Project/Unity Singleton/Library/ScriptAssemblies/Unity.2D.Tilemap.Editor.dll</HintPath>
- </Reference>
  <Reference Include="UnityEditor.UI">
  <HintPath>/home/boss/Programming/_GitHub/Unity3D/other/Unity-Singleton/Source Project/Unity Singleton/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
+ </Reference>
+ <Reference Include="com.unity.multiplayer-hlapi.Runtime">
+ <HintPath>/home/boss/Programming/_GitHub/Unity3D/other/Unity-Singleton/Source Project/Unity Singleton/Library/ScriptAssemblies/com.unity.multiplayer-hlapi.Runtime.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.AIModule">
  <HintPath>/home/boss/HDD/Unity/Hub/Editor/2019.2.0f1/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>

@@ -13,6 +13,46 @@ public class SpawnBalls : MonoBehaviour
     private Vector3 m_NewForce;
     private IEnumerator coroutine;
 
+    void Awake()
+    {
+        // https://docs.unity3d.com/ru/current/Manual/PlatformDependentCompilation.html
+        #if UNITY_EDITOR
+            Debug.Log("Unity Editor");
+        #endif
+
+        #if UNITY_EDITOR_WIN
+            Debug.Log("Unity Editor Win");
+        #endif
+
+        #if UNITY_EDITOR_OSX
+            Debug.Log("Unity Editor OSX");
+        #endif
+        
+        #if UNITY_IOS
+            Debug.Log("Unity iPhone");
+        #endif
+    
+        #if UNITY_IPHONE
+            Debug.Log("Iphone");
+        #endif
+
+        #if UNITY_ANDROID
+            Debug.Log("Android");
+        #endif
+
+        #if UNITY_STANDALONE_OSX
+            Debug.Log("Stand Alone OSX");
+        #endif
+
+        #if UNITY_STANDALONE_WIN
+            Debug.Log("Stand Alone Windows");
+        #endif 
+
+        #if UNITY_STANDALONE_LINUX
+            Debug.Log("Stand Alone Linux");
+        #endif
+    }
+
     void Start()
     {
         coroutine = DropBombes();
