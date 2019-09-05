@@ -1,5 +1,5 @@
 sceneSetups:
-- path: Assets/Scenes/Test_pc_android.unity
+- path: Assets/Scenes/Test_coroutine.unity
   isLoaded: 1
   isActive: 1
   isSubScene: 0
