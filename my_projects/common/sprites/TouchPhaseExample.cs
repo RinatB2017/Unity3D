@@ -39,6 +39,23 @@ public class TouchPhaseExample : MonoBehaviour
 
     void Update()
     {
+#if UNITY_EDITOR
+        if(Input.GetMouseButtonDown(0))
+        {
+            print("Began");
+            print(Input.mousePosition.x + ":" + Input.mousePosition.y);
+        }
+        else if (Input.GetMouseButtonUp(0))
+        {
+            print("Ended");
+            print(Input.mousePosition.x + ":" + Input.mousePosition.y);
+        }
+        else if (Input.GetMouseButton(0))
+        {
+            print("Moved");
+            print(Input.mousePosition.x + ":" + Input.mousePosition.y);
+        }
+#else
         // Track a single touch as a direction control.
         if (Input.touchCount > 0)
         {
@@ -77,5 +94,6 @@ public class TouchPhaseExample : MonoBehaviour
                     break;
             }
         }
+#endif            
     }
 }
