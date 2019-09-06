@@ -10,6 +10,8 @@ public class TouchPhaseExample : MonoBehaviour
 
     private bool f_moved = false;
     private int index = -1;
+    private float offset_x = 0f;
+    private float offset_y = 0f;
 
     private Camera cam;
     private Vector3 old_pos;
@@ -69,12 +71,17 @@ public class TouchPhaseExample : MonoBehaviour
                 float w = l_obj[i].GetComponent<SpriteRenderer>().bounds.size.x;
                 float h = l_obj[i].GetComponent<SpriteRenderer>().bounds.size.y;
                 float x = l_obj[i].transform.position.x - w / 2f;
-                float y = l_obj[i].transform.position.y - h /2f;
+                float y = l_obj[i].transform.position.y - h / 2f;
                 Rect rect = new Rect(x,y,w,h);
                 if (rect.Contains(wp))
                 {
                     print("Yes! " + i);
                     print(wp.x + ":" + wp.y);
+                    // offset_x = wp.x - x;
+                    // offset_y = wp.y - y;
+                    offset_x = wp.x - l_obj[i].transform.position.x;
+                    offset_y = wp.y - l_obj[i].transform.position.y;
+                    print("offset: " + offset_x + ":" + offset_y);
                     index = i;
                 }
             }
@@ -93,7 +100,11 @@ public class TouchPhaseExample : MonoBehaviour
 
             if(index != -1)
             {
-                Vector3 wp = cam.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, cam.nearClipPlane));
+                Vector3 wp = cam.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, 
+                                                                Input.mousePosition.y, 
+                                                                cam.nearClipPlane));
+                wp.x -= offset_x;
+                wp.y -= offset_y;
                 //l_obj[index].GetComponent<Rigidbody2D>().MovePosition(wp);
                 l_obj[index].transform.position = wp;
             }
