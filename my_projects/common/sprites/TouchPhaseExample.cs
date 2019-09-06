@@ -74,13 +74,13 @@ public class TouchPhaseExample : MonoBehaviour
             state = States.MOVED;
             if(index != -1)
             {
-                Vector3 wp = cam.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, 
+                Vector3 vp = cam.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, 
                                                                 Input.mousePosition.y, 
                                                                 cam.nearClipPlane));
-                wp.x -= offset_x;
-                wp.y -= offset_y;
-                //l_obj[index].GetComponent<Rigidbody2D>().MovePosition(wp);
-                l_obj[index].transform.position = wp;
+                vp.x -= offset_x;
+                vp.y -= offset_y;
+                //l_obj[index].GetComponent<Rigidbody2D>().MovePosition(vp);
+                l_obj[index].transform.position = vp;
             }
         }
 #else
@@ -88,6 +88,7 @@ public class TouchPhaseExample : MonoBehaviour
         if (Input.touchCount > 0)
         {
             Touch touch = Input.GetTouch(0);
+            Vector3 vp;
 
             // Handle finger movements based on touch phase.
             switch (touch.phase)
@@ -95,6 +96,7 @@ public class TouchPhaseExample : MonoBehaviour
                 // Record initial touch position.
                 case TouchPhase.Began:
                     state = States.BEGAN;
+                    vp = cam.ScreenToWorldPoint(new Vector3(touch.position.x, touch.position.y, cam.nearClipPlane));
                     for(int i=0; i<l_obj.Count; i++)
                     {
                         float w = l_obj[i].GetComponent<SpriteRenderer>().bounds.size.x;
@@ -102,12 +104,12 @@ public class TouchPhaseExample : MonoBehaviour
                         float x = l_obj[i].transform.position.x - w / 2f;
                         float y = l_obj[i].transform.position.y - h / 2f;
                         Rect rect = new Rect(x,y,w,h);
-                        if (rect.Contains(touch.position))
+                        if (rect.Contains(vp))
                         {
                             debug_print("Yes! " + i);
-                            debug_print(touch.position.x + ":" + touch.position.y);
-                            offset_x = touch.position.x - l_obj[i].transform.position.x;
-                            offset_y = touch.position.y - l_obj[i].transform.position.y;
+                            debug_print(vp.x + ":" + vp.y);
+                            offset_x = vp.x - l_obj[i].transform.position.x;
+                            offset_y = vp.y - l_obj[i].transform.position.y;
                             debug_print("offset: " + offset_x + ":" + offset_y);
                             index = i;
                         }
@@ -119,7 +121,7 @@ public class TouchPhaseExample : MonoBehaviour
                     state = States.MOVED;
                     if(index != -1)
                     {
-                        Vector2 vp = touch.position;
+                        vp = cam.ScreenToWorldPoint(new Vector3(touch.position.x, touch.position.y, cam.nearClipPlane));
                         vp.x -= offset_x;
                         vp.y -= offset_y;
                         //l_obj[index].GetComponent<Rigidbody2D>().MovePosition(vp);
@@ -130,6 +132,7 @@ public class TouchPhaseExample : MonoBehaviour
                 // Report that a direction has been chosen when the finger is lifted.
                 case TouchPhase.Ended:
                     state = States.ENDED;
+                    index = -1;
                     break;
             }
         }
