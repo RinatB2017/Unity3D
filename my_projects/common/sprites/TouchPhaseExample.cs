@@ -5,22 +5,19 @@ using UnityEngine.UI;
 
 public class TouchPhaseExample : MonoBehaviour
 {
-    public Rigidbody2D gameObject;
+    private enum States 
+	{ 
+		NONE, BEGAN, ENDED, MOVED
+	};
+    private States state = States.NONE;
+
     public List<GameObject> l_obj;
 
-    private bool f_moved = false;
     private int index = -1;
     private float offset_x = 0f;
     private float offset_y = 0f;
 
     private Camera cam;
-    private Vector3 old_pos;
-    private Vector3 new_pos;
-
-    private float x1 = 0f;
-    private float y1 = 0f;
-    private float x2 = 0f;
-    private float y2 = 0f;
 
     private void debug_print(string text)
     {
@@ -30,8 +27,6 @@ public class TouchPhaseExample : MonoBehaviour
     void Awake()
     {
         cam = Camera.main;
-        old_pos = new Vector3(0, 0, 0);
-        new_pos = new Vector3(0, 0, 0);
 
         for(int i=0; i<l_obj.Count; i++)
         {
@@ -41,24 +36,6 @@ public class TouchPhaseExample : MonoBehaviour
             float height = l_obj[i].GetComponent<SpriteRenderer>().bounds.size.y;
             debug_print("Mace: " + x + ":" + y + " " + width + ":" + height);
         }
-
-        // RectTransform rt = (RectTransform)mace.transform;
-        // float width = rt.rect.width;
-        // float height = rt.rect.height;
-    }
-
-    private void move_pos()
-    {
-        if(f_moved)
-        {
-            if(old_pos != new_pos)
-            {
-                old_pos = new_pos;
-                //gameObject.MovePosition(new_pos);
-                gameObject.MovePosition(cam.ScreenToWorldPoint(new_pos));
-            }
-
-        }
     }
 
     void Update()
@@ -66,9 +43,7 @@ public class TouchPhaseExample : MonoBehaviour
 #if UNITY_EDITOR
         if(Input.GetMouseButtonDown(0))
         {
-            //debug_print("Began");
-            //debug_print(Input.mousePosition.x + ":" + Input.mousePosition.y);
-
+            state = States.BEGAN;
             Vector3 wp = cam.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, cam.nearClipPlane));
 
             for(int i=0; i<l_obj.Count; i++)
@@ -88,19 +63,15 @@ public class TouchPhaseExample : MonoBehaviour
                     index = i;
                 }
             }
-
         }
         else if (Input.GetMouseButtonUp(0))
         {
-            //debug_print("Ended");
-            //debug_print(Input.mousePosition.x + ":" + Input.mousePosition.y);
+            state = States.ENDED;
             index = -1;
         }
         else if (Input.GetMouseButton(0))
         {
-            //debug_print("Moved");
-            //debug_print(Input.mousePosition.x + ":" + Input.mousePosition.y);
-
+            state = States.MOVED;
             if(index != -1)
             {
                 Vector3 wp = cam.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, 
@@ -123,34 +94,45 @@ public class TouchPhaseExample : MonoBehaviour
             {
                 // Record initial touch position.
                 case TouchPhase.Began:
-                    debug_print("Began");
-                    debug_print(touch.position.x + ":" + touch.position.y);
-
-                    // x1 = gameObject.position.x;
-                    // y1 = gameObject.position.y;
-                    // x2 = x1 + gameObject.gameObject.transform.rect.width;
-
-                    f_moved = true;
+                    state = States.BEGAN;
+                    for(int i=0; i<l_obj.Count; i++)
+                    {
+                        float w = l_obj[i].GetComponent<SpriteRenderer>().bounds.size.x;
+                        float h = l_obj[i].GetComponent<SpriteRenderer>().bounds.size.y;
+                        float x = l_obj[i].transform.position.x - w / 2f;
+                        float y = l_obj[i].transform.position.y - h / 2f;
+                        Rect rect = new Rect(x,y,w,h);
+                        if (rect.Contains(touch.position))
+                        {
+                            debug_print("Yes! " + i);
+                            debug_print(touch.position.x + ":" + touch.position.y);
+                            offset_x = touch.position.x - l_obj[i].transform.position.x;
+                            offset_y = touch.position.y - l_obj[i].transform.position.y;
+                            debug_print("offset: " + offset_x + ":" + offset_y);
+                            index = i;
+                        }
+                    }
                     break;
 
                 // Determine direction by comparing the current touch position with the initial one.
                 case TouchPhase.Moved:
-                    debug_print("Moved");
-                    debug_print(touch.position.x + ":" + touch.position.y);
-
-                    new_pos.x = touch.position.x;
-                    new_pos.y = touch.position.y;
-                    move_pos();
+                    state = States.MOVED;
+                    if(index != -1)
+                    {
+                        Vector2 vp = touch.position;
+                        vp.x -= offset_x;
+                        vp.y -= offset_y;
+                        //l_obj[index].GetComponent<Rigidbody2D>().MovePosition(vp);
+                        l_obj[index].transform.position = vp;
+                    }
                     break;
 
                 // Report that a direction has been chosen when the finger is lifted.
                 case TouchPhase.Ended:
-                    debug_print("Ended");
-                    debug_print(touch.position.x + ":" + touch.position.y);
-                    f_moved = false;
+                    state = States.ENDED;
                     break;
             }
         }
-#endif            
+#endif    
     }
 }
