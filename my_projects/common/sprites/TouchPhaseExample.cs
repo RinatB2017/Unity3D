@@ -22,6 +22,11 @@ public class TouchPhaseExample : MonoBehaviour
     private float x2 = 0f;
     private float y2 = 0f;
 
+    private void debug_print(string text)
+    {
+        print(text);
+    }
+
     void Awake()
     {
         cam = Camera.main;
@@ -34,7 +39,7 @@ public class TouchPhaseExample : MonoBehaviour
             float y = l_obj[i].transform.position.y;
             float width  = l_obj[i].GetComponent<SpriteRenderer>().bounds.size.x;
             float height = l_obj[i].GetComponent<SpriteRenderer>().bounds.size.y;
-            print("Mace: " + x + ":" + y + " " + width + ":" + height);
+            debug_print("Mace: " + x + ":" + y + " " + width + ":" + height);
         }
 
         // RectTransform rt = (RectTransform)mace.transform;
@@ -61,8 +66,8 @@ public class TouchPhaseExample : MonoBehaviour
 #if UNITY_EDITOR
         if(Input.GetMouseButtonDown(0))
         {
-            //print("Began");
-            //print(Input.mousePosition.x + ":" + Input.mousePosition.y);
+            //debug_print("Began");
+            //debug_print(Input.mousePosition.x + ":" + Input.mousePosition.y);
 
             Vector3 wp = cam.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, cam.nearClipPlane));
 
@@ -75,13 +80,11 @@ public class TouchPhaseExample : MonoBehaviour
                 Rect rect = new Rect(x,y,w,h);
                 if (rect.Contains(wp))
                 {
-                    print("Yes! " + i);
-                    print(wp.x + ":" + wp.y);
-                    // offset_x = wp.x - x;
-                    // offset_y = wp.y - y;
+                    debug_print("Yes! " + i);
+                    debug_print(wp.x + ":" + wp.y);
                     offset_x = wp.x - l_obj[i].transform.position.x;
                     offset_y = wp.y - l_obj[i].transform.position.y;
-                    print("offset: " + offset_x + ":" + offset_y);
+                    debug_print("offset: " + offset_x + ":" + offset_y);
                     index = i;
                 }
             }
@@ -89,14 +92,14 @@ public class TouchPhaseExample : MonoBehaviour
         }
         else if (Input.GetMouseButtonUp(0))
         {
-            //print("Ended");
-            //print(Input.mousePosition.x + ":" + Input.mousePosition.y);
+            //debug_print("Ended");
+            //debug_print(Input.mousePosition.x + ":" + Input.mousePosition.y);
             index = -1;
         }
         else if (Input.GetMouseButton(0))
         {
-            //print("Moved");
-            //print(Input.mousePosition.x + ":" + Input.mousePosition.y);
+            //debug_print("Moved");
+            //debug_print(Input.mousePosition.x + ":" + Input.mousePosition.y);
 
             if(index != -1)
             {
@@ -120,8 +123,8 @@ public class TouchPhaseExample : MonoBehaviour
             {
                 // Record initial touch position.
                 case TouchPhase.Began:
-                    print("Began");
-                    print(touch.position.x + ":" + touch.position.y);
+                    debug_print("Began");
+                    debug_print(touch.position.x + ":" + touch.position.y);
 
                     // x1 = gameObject.position.x;
                     // y1 = gameObject.position.y;
@@ -132,8 +135,8 @@ public class TouchPhaseExample : MonoBehaviour
 
                 // Determine direction by comparing the current touch position with the initial one.
                 case TouchPhase.Moved:
-                    print("Moved");
-                    print(touch.position.x + ":" + touch.position.y);
+                    debug_print("Moved");
+                    debug_print(touch.position.x + ":" + touch.position.y);
 
                     new_pos.x = touch.position.x;
                     new_pos.y = touch.position.y;
@@ -142,8 +145,8 @@ public class TouchPhaseExample : MonoBehaviour
 
                 // Report that a direction has been chosen when the finger is lifted.
                 case TouchPhase.Ended:
-                    print("Ended");
-                    print(touch.position.x + ":" + touch.position.y);
+                    debug_print("Ended");
+                    debug_print(touch.position.x + ":" + touch.position.y);
                     f_moved = false;
                     break;
             }
