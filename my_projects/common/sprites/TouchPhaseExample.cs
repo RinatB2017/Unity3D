@@ -38,30 +38,35 @@ public class TouchPhaseExample : MonoBehaviour
         }
     }
 
+    private void analize(Vector3 vp, int i)
+    {
+        float w = l_obj[i].GetComponent<SpriteRenderer>().bounds.size.x;
+        float h = l_obj[i].GetComponent<SpriteRenderer>().bounds.size.y;
+        float x = l_obj[i].transform.position.x - w / 2f;
+        float y = l_obj[i].transform.position.y - h / 2f;
+        Rect rect = new Rect(x,y,w,h);
+        if (rect.Contains(vp))
+        {
+            debug_print("Yes! " + i);
+            debug_print(vp.x + ":" + vp.y);
+            offset_x = vp.x - l_obj[i].transform.position.x;
+            offset_y = vp.y - l_obj[i].transform.position.y;
+            debug_print("offset: " + offset_x + ":" + offset_y);
+            index = i;
+        }
+    }
+
     void Update()
     {
 #if UNITY_EDITOR
         if(Input.GetMouseButtonDown(0))
         {
             state = States.BEGAN;
-            Vector3 wp = cam.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, cam.nearClipPlane));
+            Vector3 vp = cam.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, cam.nearClipPlane));
 
             for(int i=0; i<l_obj.Count; i++)
             {
-                float w = l_obj[i].GetComponent<SpriteRenderer>().bounds.size.x;
-                float h = l_obj[i].GetComponent<SpriteRenderer>().bounds.size.y;
-                float x = l_obj[i].transform.position.x - w / 2f;
-                float y = l_obj[i].transform.position.y - h / 2f;
-                Rect rect = new Rect(x,y,w,h);
-                if (rect.Contains(wp))
-                {
-                    debug_print("Yes! " + i);
-                    debug_print(wp.x + ":" + wp.y);
-                    offset_x = wp.x - l_obj[i].transform.position.x;
-                    offset_y = wp.y - l_obj[i].transform.position.y;
-                    debug_print("offset: " + offset_x + ":" + offset_y);
-                    index = i;
-                }
+                analize(vp, i);
             }
         }
         else if (Input.GetMouseButtonUp(0))
@@ -99,20 +104,7 @@ public class TouchPhaseExample : MonoBehaviour
                     vp = cam.ScreenToWorldPoint(new Vector3(touch.position.x, touch.position.y, cam.nearClipPlane));
                     for(int i=0; i<l_obj.Count; i++)
                     {
-                        float w = l_obj[i].GetComponent<SpriteRenderer>().bounds.size.x;
-                        float h = l_obj[i].GetComponent<SpriteRenderer>().bounds.size.y;
-                        float x = l_obj[i].transform.position.x - w / 2f;
-                        float y = l_obj[i].transform.position.y - h / 2f;
-                        Rect rect = new Rect(x,y,w,h);
-                        if (rect.Contains(vp))
-                        {
-                            debug_print("Yes! " + i);
-                            debug_print(vp.x + ":" + vp.y);
-                            offset_x = vp.x - l_obj[i].transform.position.x;
-                            offset_y = vp.y - l_obj[i].transform.position.y;
-                            debug_print("offset: " + offset_x + ":" + offset_y);
-                            index = i;
-                        }
+                        analize(vp, i);
                     }
                     break;
 
