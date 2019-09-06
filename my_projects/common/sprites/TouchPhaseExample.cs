@@ -66,10 +66,11 @@ public class TouchPhaseExample : MonoBehaviour
 
             for(int i=0; i<l_obj.Count; i++)
             {
-                Rect rect = new Rect(l_obj[i].transform.position.x,
-                                        l_obj[i].transform.position.y, 
-                                        l_obj[i].GetComponent<SpriteRenderer>().bounds.size.x,
-                                        l_obj[i].GetComponent<SpriteRenderer>().bounds.size.y);
+                float w = l_obj[i].GetComponent<SpriteRenderer>().bounds.size.x;
+                float h = l_obj[i].GetComponent<SpriteRenderer>().bounds.size.y;
+                float x = l_obj[i].transform.position.x - w / 2f;
+                float y = l_obj[i].transform.position.y - h /2f;
+                Rect rect = new Rect(x,y,w,h);
                 if (rect.Contains(wp))
                 {
                     print("Yes! " + i);
