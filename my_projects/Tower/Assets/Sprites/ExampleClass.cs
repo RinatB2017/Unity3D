@@ -17,6 +17,8 @@ public class ExampleClass : MonoBehaviour
 
             if (rb != null)
                 rb.AddExplosionForce(power, explosionPos, radius, 3.0F);
+            else
+                print("rb is NULL");
         }
     }
 }
