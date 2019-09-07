@@ -13,7 +13,7 @@ public class ExampleClass : MonoBehaviour
         gameObject.GetComponent<Rigidbody>().AddExplosionForce(power, 
                                                                explosionPos,
                                                                radius,
-                                                               3.0F);
+                                                               0.0F);
     }
 
     void test()
