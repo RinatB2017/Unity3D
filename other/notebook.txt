@@ -1,1 +1,1 @@
-Чтобы добавить физику (падение и т.д.) - добавим компонент Rigidbody2D
+https://docs.unity3d.com/Manual/InstantiatingPrefabs.html
