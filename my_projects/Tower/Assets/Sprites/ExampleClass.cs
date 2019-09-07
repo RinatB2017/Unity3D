@@ -10,7 +10,10 @@ public class ExampleClass : MonoBehaviour
     void self_explosion()
     {
         Vector3 explosionPos = transform.position;
-        gameObject.GetComponent<Rigidbody>().AddExplosionForce(power, explosionPos, radius, 3.0F);
+        gameObject.GetComponent<Rigidbody>().AddExplosionForce(power, 
+                                                               explosionPos,
+                                                               radius,
+                                                               3.0F);
     }
 
     void test()
