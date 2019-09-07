@@ -7,7 +7,13 @@ public class ExampleClass : MonoBehaviour
     public float radius = 5.0F;
     public float power = 10.0F;
 
-    void Start()
+    void self_explosion()
+    {
+        Vector3 explosionPos = transform.position;
+        gameObject.GetComponent<Rigidbody>().AddExplosionForce(power, explosionPos, radius, 3.0F);
+    }
+
+    void test()
     {
         Vector3 explosionPos = transform.position;
         Collider[] colliders = Physics.OverlapSphere(explosionPos, radius);
@@ -20,5 +26,10 @@ public class ExampleClass : MonoBehaviour
             else
                 print("rb is NULL");
         }
+    }
+
+    void Start()
+    {
+        self_explosion();
     }
 }
