@@ -15,7 +15,7 @@ public class Tower : MonoBehaviour
     private float start_z = -2f;
 
     private static int cnt_x = 4;
-    private static int cnt_y = 12;
+    private static int cnt_y = 30;
     private static int cnt_z = 4;
 
     private Rigidbody[] cubes = new Rigidbody[(cnt_x + 1) * (cnt_y + 1) * (cnt_z + 1)];
@@ -33,7 +33,9 @@ public class Tower : MonoBehaviour
                     // Rigidbody cube = Instantiate(prefab, temp_vector, Quaternion.identity) as Rigidbody;
                     // cubes[index++] = cube;
                     Transform cube = Instantiate(prefab, temp_vector, Quaternion.identity);
-                    cubes[index++] = cube.GetComponent<Rigidbody>();
+                    Rigidbody r_cube = cube.GetComponent<Rigidbody>();
+                    r_cube.isKinematic = true;
+                    cubes[index++] = r_cube;
                 }
             }
         }
@@ -46,6 +48,7 @@ public class Tower : MonoBehaviour
         print("BOOM");
         for(int i = 0; i < cubes.Length; i++)
         {
+            cubes[i].GetComponent<Rigidbody>().isKinematic = false;
             cubes[i].AddExplosionForce(power, 
                                        cubes[i].position,
                                        radius,
