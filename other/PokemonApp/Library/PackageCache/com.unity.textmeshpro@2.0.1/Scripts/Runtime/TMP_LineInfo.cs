@@ -1,4 +1,4 @@
-namespace TMPro
+﻿namespace TMPro
 {
 
     /// <summary>
