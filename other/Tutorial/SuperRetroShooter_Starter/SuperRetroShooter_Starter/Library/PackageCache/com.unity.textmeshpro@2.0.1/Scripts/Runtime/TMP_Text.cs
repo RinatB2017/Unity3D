@@ -1,4 +1,4 @@
-#define TMP_PRESENT
+﻿#define TMP_PRESENT
 
 using UnityEngine;
 using UnityEngine.TextCore;
