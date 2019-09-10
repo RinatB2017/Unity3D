@@ -10,6 +10,12 @@ public class Tower : MonoBehaviour
     public float power = 50.0F;
     public float upwardModifier = -3.0f;
 
+    private Camera cam;
+
+    public float runSpeed = 1f;
+    public Joystick up_down_joystick;
+    public Joystick left_right_joystick;
+
     private float start_x = -2f;
     private float start_y = 0.5f;
     private float start_z = -2f;
@@ -19,6 +25,11 @@ public class Tower : MonoBehaviour
     private static int cnt_z = 4;
 
     private Rigidbody[] cubes = new Rigidbody[(cnt_x + 1) * (cnt_y + 1) * (cnt_z + 1)];
+
+    void Awake()
+    {
+        cam = Camera.main;
+    }
 
     void Start()
     {
@@ -57,12 +68,27 @@ public class Tower : MonoBehaviour
         }
     }
 
+    void move_cam()
+    {
+        float x = left_right_joystick.Horizontal * runSpeed;
+        float z = left_right_joystick.Vertical * runSpeed;
+        float y = up_down_joystick.Vertical * runSpeed;
+
+        Vector3 vp = cam.transform.position;
+        vp.x = x;
+        vp.y = y;
+        vp.z = z;
+
+        cam.transform.position = vp;
+    }
+
     // Update is called once per frame
     void Update()
     {
         if (Input.GetButtonDown("Fire1"))
         {
-            self_explosion();
+            //self_explosion();
+            move_cam();
         }
     }
 }
