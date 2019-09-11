@@ -1,10 +1,7 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class MoveScript : MonoBehaviour
 {
-    //public Rigidbody2D gameObject;
     public float speed = 200f;
 
     public float min_h = -10f;
@@ -23,19 +20,10 @@ public class MoveScript : MonoBehaviour
     private float h_G;
     private float h_B;
 
-    private float begin_y = 0f;
+    private float begin_h = 0f;
     Vector2 begin_position;
 
     private float timer = 0f;
-
-    private Camera cam;
-
-    // private int s_width = 0;
-    // private int s_height = 0;
-
-    // public int PPU = 100;
-    // float w_sprite = 1024;
-    // float h_sprite = 768;
 
     void debug_print(string text)
     {
@@ -44,16 +32,6 @@ public class MoveScript : MonoBehaviour
 
     void Awake()
     {
-        cam = Camera.main;
-
-        // Vector3 screenPos = cam.WorldToScreenPoint(new Vector3(0, 0, 0));
-        // debug_print("screenPos: " + screenPos);
-
-        // s_width  = Screen.width;
-        // s_height = Screen.height;
-        // debug_print("width  " + s_width);
-        // debug_print("height " + s_height);
-
         h_R = sprite_R.GetComponent<SpriteRenderer>().bounds.size.y;
         h_G = sprite_G.GetComponent<SpriteRenderer>().bounds.size.y;
         h_B = sprite_B.GetComponent<SpriteRenderer>().bounds.size.y;
@@ -84,17 +62,17 @@ public class MoveScript : MonoBehaviour
         {
             timer = 0f;
 
-            begin_y += inc_h;
-            if(begin_y <= min_h)
+            begin_h += inc_h;
+            if(begin_h <= min_h)
             {
                 inc_h *= -1f;
             }
-            if(begin_y >= max_h)
+            if(begin_h >= max_h)
             {
                 inc_h *= -1f;
             }
 
-            begin_position.y = begin_y;
+            begin_position.y = begin_h;
             move(begin_position);
         }
     }
