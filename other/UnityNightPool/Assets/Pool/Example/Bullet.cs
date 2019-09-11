@@ -6,7 +6,6 @@ namespace UnityNightPool.Example
 {
     public class Bullet : MonoBehaviour
     {
-
         public float force = 5f;
 
         public void Shoot()

@@ -1,11 +1,14 @@
-﻿namespace UnityNightPool {
+﻿namespace UnityNightPool 
+{
 	[System.Serializable]
-	public class PoolSetup{
+	public class PoolSetup
+	{
 		public PoolObject prefab;
 		public int id;
 	    public bool switchGameObject = true;
 
-        public PoolSetup(PoolObject prefab, int id) {
+        public PoolSetup(PoolObject prefab, int id) 
+		{
 			this.prefab = prefab;
 			this.id = id;
 		}

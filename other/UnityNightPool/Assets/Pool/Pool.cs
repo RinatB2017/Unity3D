@@ -1,8 +1,10 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 
-namespace UnityNightPool {
-	public class Pool{
+namespace UnityNightPool 
+{
+	public class Pool
+	{
 	    PoolSetup _setup;
 
 	    public PoolSetup setup
@@ -11,7 +13,8 @@ namespace UnityNightPool {
 	        private set { _setup = value; }
 	    }
 
-        public int id {
+        public int id 
+		{
 			get {
 				return setup.id;
 			}
@@ -19,14 +22,17 @@ namespace UnityNightPool {
 
 		List<PoolObject> spawned=new List<PoolObject>();
 
-		public void ReturnAll() {
-			for (int i = 0; i < spawned.Count; i++) {
+		public void ReturnAll() 
+		{
+			for (int i = 0; i < spawned.Count; i++) 
+			{
 				if (spawned[i]!=null && !spawned [i].free)
 					spawned [i].Return ();
 			}
 		}
 
-		public Pool (PoolSetup setup) {
+		public Pool (PoolSetup setup) 
+		{
 			this.setup = setup;
 		}
 

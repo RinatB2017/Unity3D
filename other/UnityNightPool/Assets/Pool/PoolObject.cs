@@ -1,12 +1,15 @@
 ﻿using UnityEngine;
 
-namespace UnityNightPool {
-	public class PoolObject : MonoBehaviour {
+namespace UnityNightPool 
+{
+	public class PoolObject : MonoBehaviour 
+	{
 		bool _free=true;
 	    bool init = false;
 	    bool switchGameObject = true;
 
-        public bool free {
+        public bool free 
+		{
 			get {
 				return _free;
 			}
@@ -26,12 +29,14 @@ namespace UnityNightPool {
 	        }
 	    }
 
-        public void Push() {
+        public void Push() 
+		{
 			free = false;
             if (switchGameObject) gameObject.SetActive(true);
         }
 			
-		public void Return() {
+		public void Return() 
+		{
 		    if (init)
 		    {
 		        free = true;
