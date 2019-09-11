@@ -17,7 +17,7 @@ public class Test_scene : MonoBehaviour
         begin_position = new Vector2(0, 0);
         for(int n=0; n<10; n++)
         {
-            begin_position.x = n;
+            begin_position.x = n - 5;
             GameObject obj = Instantiate(prefab, begin_position, Quaternion.identity);
             obj.GetComponent<Rigidbody2D>().MovePosition(begin_position);
             obj.SetActive(false);
@@ -31,8 +31,8 @@ public class Test_scene : MonoBehaviour
         if(timer > 1f)
         {
             timer = 0f;
-            // for(int n=0; n<l_obj.Count; n++)
-            for(int n=0; n<3; n++)
+            for(int n=0; n<l_obj.Count; n++)
+            // for(int n=0; n<3; n++)
             {
                 bool flag = l_obj[n].activeSelf;
                 l_obj[n].SetActive(!flag);
