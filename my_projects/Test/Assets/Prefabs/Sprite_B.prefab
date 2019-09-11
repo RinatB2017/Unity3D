@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 4848820871231561005}
   - component: {fileID: 4848820871231561004}
   - component: {fileID: 4848820871231561043}
-  - component: {fileID: 4848820871231561042}
   m_Layer: 0
   m_Name: Sprite_B
   m_TagString: Untagged
@@ -103,17 +102,3 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &4848820871231561042
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4848820871231561041}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8480e66adf6f5977bafd073dfe82fc6a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  gameObject: {fileID: 4848820871231561043}
-  speed: 5
