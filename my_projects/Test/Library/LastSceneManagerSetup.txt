@@ -1,5 +1,5 @@
 sceneSetups:
-- path: Assets/Scenes/Test_instantiate.unity
+- path: Assets/Scenes/Test_mesh.unity
   isLoaded: 1
   isActive: 1
   isSubScene: 0
