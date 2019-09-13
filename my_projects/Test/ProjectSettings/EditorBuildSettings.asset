@@ -9,6 +9,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Test_15.unity
     guid: c9c461151b8b2d73b8264092906eb01a
   - enabled: 1
+    path: Assets/Scenes/Test_mesh.unity
+    guid: 0b45fd50d9f7420ce9cf63533c594b4b
+  - enabled: 1
     path: Assets/Scenes/Test_instantiate.unity
     guid: aa0d1cd064ab17f3ebf0eadd513cfa6b
   - enabled: 1
