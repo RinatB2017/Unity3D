@@ -1,7 +1,7 @@
 using UnityEngine;
 using System.Collections;
 
-public class Btn_click : MonoBehaviour
+public class Btn_click : DebugClass
 {
     public GameObject gameObject;
     public string f_name;

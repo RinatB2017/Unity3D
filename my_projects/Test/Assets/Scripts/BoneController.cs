@@ -3,17 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class BoneController : MonoBehaviour
+public class BoneController : DebugClass
 {
-    public GameObject bone;
-    public GameObject h_bone;
-    public GameObject v_bone;
     public List<GameObject> l_obj;
-
-    private GameObject l_wall;
-    private GameObject r_wall;
-    private GameObject t_wall;
-    private GameObject b_wall;
 
     private int index = -1;
     private float offset_x = 0f;
@@ -28,30 +20,32 @@ public class BoneController : MonoBehaviour
 
     private void create_world()
     {
+        int x = -2;
+        int y = -2;
+
         Vector2 temp_vector = new Vector2(0, 0);
+        for(var n=0; n<l_obj.Count; n++)
+        {
+            temp_vector.x = x;
+            temp_vector.y = y;
 
-        Vector2 l_pos = new Vector2(0, 0);
-        Vector2 r_pos = new Vector2(0, 0);
-        Vector2 t_pos = new Vector2(0, 0);
-        Vector2 b_pos = new Vector2(0, 0);
-
-        l_wall = Instantiate(v_bone, temp_vector, Quaternion.identity);
-        r_wall = Instantiate(v_bone, temp_vector, Quaternion.identity);
-        // t_wall = Instantiate(h_bone, temp_vector, Quaternion.identity);
-        // b_wall = Instantiate(h_bone, temp_vector, Quaternion.identity);
-
-        l_pos.x = -0.4f;
-        l_pos.y = 0f;
-        l_wall.GetComponent<Rigidbody2D>().MovePosition(l_pos);
-
-        r_pos.x = 4.6f;
-        r_pos.y = 0f;
-        r_wall.GetComponent<Rigidbody2D>().MovePosition(r_pos);
+            l_obj[n].transform.position = temp_vector;
+            if(x < 2)
+            {
+                x++;
+            }
+            else
+            {
+                x=0;
+                y++;
+            }
+        }
     }
 
     void Start()
     {
         cam = Camera.main;
+        create_world();
 
         // l_obj = new List<GameObject>();
         // Vector2 temp_vector = new Vector2(0, 0);

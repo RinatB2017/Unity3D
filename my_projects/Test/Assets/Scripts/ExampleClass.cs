@@ -1,7 +1,7 @@
 using UnityEngine;
 using System.Collections;
 
-public class ExampleClass : MonoBehaviour
+public class ExampleClass : DebugClass
 {
     void Update()
     {
