@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+// [Serializable]
 public class TestClass : MonoBehaviour
 {
     public GameObject obj;

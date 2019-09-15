@@ -2,17 +2,18 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CheckPoint : MonoBehaviour
+public class CheckPoint : DebugClass
 {
-    // Start is called before the first frame update
-    void Start()
+    public GameObject obj;
+    public string f_name;
+
+    void OnCollisionEnter2D(Collision2D col)
     {
-        
+        obj.SendMessage(f_name);
     }
 
-    // Update is called once per frame
-    void Update()
+    void OnTriggerEnter2D(Collider2D col)
     {
-        
+        obj.SendMessage(f_name);
     }
 }

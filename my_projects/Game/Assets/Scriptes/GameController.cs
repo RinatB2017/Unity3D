@@ -21,7 +21,9 @@ public class GameController : MonoBehaviour
     {
         cam = Camera.main;
         l_obj = new List<GameObject>();
-        if (respawns == null)
+
+        debug_print("Awake");
+        // if (respawns == null)
         {
             respawns = GameObject.FindGameObjectsWithTag("Enemy");
         }

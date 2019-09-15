@@ -9,6 +9,8 @@ TagManager:
   - Left Boundary
   - Right Boundary
   - Enemy
+  - TestObject
+  - Target
   layers:
   - Default
   - TransparentFX
