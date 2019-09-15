@@ -1,7 +1,7 @@
 using UnityEngine;
 using System.Collections;
  
-public class PlayerController : MonoBehaviour 
+public class PlayerController : DebugClass 
 {
     // Using same speed reference in both, desktop and other devices
     public float speed = 1000;

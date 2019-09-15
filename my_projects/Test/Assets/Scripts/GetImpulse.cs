@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class GetImpulse : MonoBehaviour
+public class GetImpulse : DebugClass
 {
     private Vector3 m_NewForce;
     private Rigidbody2D Rigid;

@@ -64,7 +64,7 @@ public class Player_move : DebugClass
         if(vertical < 0)   position.y = position.y - speed;
         if(vertical > 0)   position.y = position.y + speed;
 
-        rigidbody2D.MovePosition(position);
+        //rigidbody2D.MovePosition(position);
     }
 
     void Update2()

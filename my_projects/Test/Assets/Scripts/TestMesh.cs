@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TestMesh : MonoBehaviour
+public class TestMesh : DebugClass
 {
     void Start()
     {

@@ -13,11 +13,6 @@ public class BoneController : DebugClass
 
     private Camera cam;
 
-    private void debug_print(string text)
-    {
-        print(text);
-    }
-
     private void create_world()
     {
         int x = -2;

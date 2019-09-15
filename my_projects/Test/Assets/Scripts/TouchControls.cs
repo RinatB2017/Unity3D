@@ -1,7 +1,7 @@
 using UnityEngine;
 using System.Collections;
 
-public class TouchControls : MonoBehaviour 
+public class TouchControls : DebugClass 
 {
     public Rigidbody2D rigidbody2D;
 

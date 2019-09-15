@@ -8,6 +8,7 @@ public class Btn_click : DebugClass
     
     void OnMouseDown()
     {
+        debug_print("DOWN");
         gameObject.SendMessage(f_name, true);
     }
 

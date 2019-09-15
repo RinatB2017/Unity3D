@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class TestCoroutine : MonoBehaviour
+public class TestCoroutine : DebugClass
 {
     public  Text info;
     private IEnumerator coroutine;

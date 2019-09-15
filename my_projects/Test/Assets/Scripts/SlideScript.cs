@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class SlideScript : MonoBehaviour
+public class SlideScript : DebugClass
 {
     public float speed = 200f;
 
@@ -31,11 +31,6 @@ public class SlideScript : MonoBehaviour
     private float h_B;
 
     private Camera cam;
-
-    void debug_print(string text)
-    {
-        print(text);
-    }
 
     void Awake()
     {

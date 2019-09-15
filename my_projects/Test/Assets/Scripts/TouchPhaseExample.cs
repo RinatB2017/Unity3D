@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class TouchPhaseExample : MonoBehaviour
+public class TouchPhaseExample : DebugClass
 {
     private enum States 
 	{ 
@@ -18,11 +18,6 @@ public class TouchPhaseExample : MonoBehaviour
     private float offset_y = 0f;
 
     private Camera cam;
-
-    private void debug_print(string text)
-    {
-        print(text);
-    }
 
     void Awake()
     {

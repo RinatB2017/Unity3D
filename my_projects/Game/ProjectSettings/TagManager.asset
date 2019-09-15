@@ -8,6 +8,7 @@ TagManager:
   - Bottom Boundary
   - Left Boundary
   - Right Boundary
+  - Enemy
   layers:
   - Default
   - TransparentFX

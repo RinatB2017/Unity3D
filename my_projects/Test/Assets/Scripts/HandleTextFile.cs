@@ -37,6 +37,6 @@ public class HandleTextFile : MonoBehaviour
     {
         WriteString();
         ReadString();
-        print("Current time " + System.DateTime.Now);
+        Debug.Log("Current time " + System.DateTime.Now);
     }
 }

@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Test : MonoBehaviour
+public class Test : DebugClass
 {
     public float thrust;
     public Rigidbody2D rb;
@@ -25,7 +25,7 @@ public class Test : MonoBehaviour
     
     void Start()
     {
-        print("Test started!");
+        debug_print("Test started!");
     }
 
     void Update()

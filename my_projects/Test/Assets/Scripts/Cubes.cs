@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Cubes : MonoBehaviour
+public class Cubes : DebugClass
 {
     public Transform prefab;
 

@@ -15,17 +15,17 @@ public class ExampleClass : DebugClass
             {
                 // Record initial touch position.
                 case TouchPhase.Began:
-                    print("Began");
+                    debug_print("Began");
                     break;
 
                 // Determine direction by comparing the current touch position with the initial one.
                 case TouchPhase.Moved:
-                    print("Moved");
+                    debug_print("Moved");
                     break;
 
                 // Report that a direction has been chosen when the finger is lifted.
                 case TouchPhase.Ended:
-                    print("Ended");
+                    debug_print("Ended");
                     break;
             }
         }

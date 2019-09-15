@@ -12,13 +12,20 @@ public class GameController : MonoBehaviour
     public List<GameObject> l_obj;
     private float timer = 0f;
 
-    public GameObject player;
+    public GameObject   player;
+    public GameObject[] respawns;
 
     private Camera cam;
 
     void Awake()
     {
         cam = Camera.main;
+        l_obj = new List<GameObject>();
+        if (respawns == null)
+        {
+            respawns = GameObject.FindGameObjectsWithTag("Enemy");
+        }
+        debug_print("Length " + respawns.Length);
     }
 
     private void debug_print(string text)

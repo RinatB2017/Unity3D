@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Spawn : MonoBehaviour
+public class Spawn : DebugClass
 {
     public Rigidbody2D obj;
     private Vector2 pos;

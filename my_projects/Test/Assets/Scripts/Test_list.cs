@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Test_list : MonoBehaviour
+public class Test_list : DebugClass
 {
     public List<GameObject> go_list;
 

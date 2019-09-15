@@ -2,15 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CheckCollision : MonoBehaviour
+public class CheckCollision : DebugClass
 {
     void OnCollisionEnter2D(Collision2D col)
     {
-        print("OnCollisionEnter2D");
+        debug_print("OnCollisionEnter2D");
     }
 
     void OnTriggerEnter2D(Collider2D col)
     {
-        print("OnTriggerEnter2D");
+        debug_print("OnTriggerEnter2D");
     }
 }

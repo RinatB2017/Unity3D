@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Splash : MonoBehaviour
+public class Splash : DebugClass
 {
     public float delay_sec = 2.5f;
     private IEnumerator coroutine;

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class SpawnBalls : MonoBehaviour
+public class SpawnBalls : DebugClass
 {
     public Rigidbody2D  prefab;
     public Text info;
@@ -17,39 +17,39 @@ public class SpawnBalls : MonoBehaviour
     {
         // https://docs.unity3d.com/ru/current/Manual/PlatformDependentCompilation.html
         #if UNITY_EDITOR
-            Debug.Log("Unity Editor");
+            debug_print("Unity Editor");
         #endif
 
         #if UNITY_EDITOR_WIN
-            Debug.Log("Unity Editor Win");
+            debug_print("Unity Editor Win");
         #endif
 
         #if UNITY_EDITOR_OSX
-            Debug.Log("Unity Editor OSX");
+            debug_print("Unity Editor OSX");
         #endif
         
         #if UNITY_IOS
-            Debug.Log("Unity iPhone");
+            debug_print("Unity iPhone");
         #endif
     
         #if UNITY_IPHONE
-            Debug.Log("Iphone");
+            debug_print("Iphone");
         #endif
 
         #if UNITY_ANDROID
-            Debug.Log("Android");
+            debug_print("Android");
         #endif
 
         #if UNITY_STANDALONE_OSX
-            Debug.Log("Stand Alone OSX");
+            debug_print("Stand Alone OSX");
         #endif
 
         #if UNITY_STANDALONE_WIN
-            Debug.Log("Stand Alone Windows");
+            debug_print("Stand Alone Windows");
         #endif 
 
         #if UNITY_STANDALONE_LINUX
-            Debug.Log("Stand Alone Linux");
+            debug_print("Stand Alone Linux");
         #endif
     }
 

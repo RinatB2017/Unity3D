@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerMovement : MonoBehaviour
+public class PlayerMovement : DebugClass
 {
     float horizontalMove = 0f;
     float verticalMove = 0f;

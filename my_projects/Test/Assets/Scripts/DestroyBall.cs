@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DestroyBall : MonoBehaviour
+public class DestroyBall : DebugClass
 {
     void OnMouseDown()
     {

@@ -3,7 +3,7 @@ using UnityEngine.UI;
 using System.Collections;
 using System.Collections.Generic;
  
-public class Keyboard : MonoBehaviour
+public class Keyboard : DebugClass
 {
     private int cnt = -1;
 
@@ -21,11 +21,6 @@ public class Keyboard : MonoBehaviour
     public List<Rect>   rects;
 
     public GameObject   player;
-
-    void debug_print(string text)
-    {
-        print(text);
-    }
 
     void Awake()
     {

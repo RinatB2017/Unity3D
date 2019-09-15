@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Bone : MonoBehaviour
+public class Bone : DebugClass
 {
     // public Rigidbody2D bone;
 
@@ -12,11 +12,6 @@ public class Bone : MonoBehaviour
     private float offset_y = 0f;
 
     private Camera cam;
-
-    private void debug_print(string text)
-    {
-        print(text);
-    }
 
     void Awake()
     {

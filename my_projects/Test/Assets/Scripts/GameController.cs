@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GameController : MonoBehaviour
+public class GameController : DebugClass
 {
     public GameObject leftBoundary;
     public GameObject rightBoundary;

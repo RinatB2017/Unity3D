@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RunPage : MonoBehaviour
+public class RunPage : DebugClass
 {
     public GameObject page;
 

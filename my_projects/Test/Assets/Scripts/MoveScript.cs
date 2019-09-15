@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class MoveScript : MonoBehaviour
+public class MoveScript : DebugClass
 {
     public float speed = 200f;
 
@@ -24,11 +24,6 @@ public class MoveScript : MonoBehaviour
     Vector2 begin_position;
 
     private float timer = 0f;
-
-    void debug_print(string text)
-    {
-        print(text);
-    }
 
     void Awake()
     {

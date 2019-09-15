@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Dropper : MonoBehaviour
+public class Dropper : DebugClass
 {
     public Transform prefab;
     public float delay_sec = 1.5f;
@@ -23,10 +23,5 @@ public class Dropper : MonoBehaviour
             Instantiate(prefab, temp_vector, Quaternion.identity);
             yield return new WaitForSeconds(delay_sec);
         }
-    }
-
-    void Update()
-    {
-        
     }
 }
