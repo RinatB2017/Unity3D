@@ -24,7 +24,8 @@ public class BoneController : DebugClass
             temp_vector.x = x;
             temp_vector.y = y;
 
-            l_obj[n].transform.position = temp_vector;
+            // l_obj[n].transform.position = temp_vector;
+            l_obj[n].GetComponent<Rigidbody2D>().velocity = temp_vector;
             if(x < 2)
             {
                 x++;
@@ -100,7 +101,8 @@ public class BoneController : DebugClass
                                                         cam.nearClipPlane));
                 vp.x -= offset_x;
                 vp.y -= offset_y;
-                l_obj[index].transform.position = vp;
+                // l_obj[index].transform.position = vp;
+                l_obj[index].GetComponent<Rigidbody2D>().velocity = vp;
             }
         }
 #else
@@ -131,7 +133,8 @@ public class BoneController : DebugClass
                                                                 cam.nearClipPlane));
                         vp.x -= offset_x;
                         vp.y -= offset_y;
-                        l_obj[index].transform.position = vp;
+                        // l_obj[index].transform.position = vp;
+                        l_obj[index].GetComponent<Rigidbody2D>().velocity = vp;
                     }
                     break;
 

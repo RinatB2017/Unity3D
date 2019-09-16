@@ -48,7 +48,8 @@ public class Bone : DebugClass
                                                         cam.nearClipPlane));
                 vp.x -= offset_x;
                 vp.y -= offset_y;
-                gameObject.GetComponent<Rigidbody2D>().MovePosition(vp);
+                gameObject.GetComponent<Rigidbody2D>().velocity = vp;
+                //gameObject.GetComponent<Rigidbody2D>().MovePosition(vp);
                 // bone.MovePosition(vp);
             }
         }
