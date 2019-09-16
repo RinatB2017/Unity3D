@@ -6,7 +6,8 @@ public class Runner : DebugClass
 {
     public GameObject player;
     public float speed = 20f;
-    public float step = 0.1f;
+    public float h_step = 0.1f;
+    public float v_step = 0.01f;
 
     // public List<TestClass> l_test;
     // public TestClass l_test;
@@ -46,11 +47,13 @@ public class Runner : DebugClass
 
     void f_up()
     {
-        player_pos.y+=0.1f;
+        // debug_print("f_up");
+        player_pos.y+=v_step;
     }
     void f_down()
     {
-        player_pos.y-=0.1f;
+        // debug_print("f_down");
+        player_pos.y-=v_step;
     }
 
     void Update()
@@ -60,7 +63,7 @@ public class Runner : DebugClass
         {
             // debug_print("Update " + player_pos.x);
             timer = 0f;
-            player_pos.x+=step;
+            player_pos.x+=h_step;
 
             player_body.MovePosition(player_pos);
         }        
