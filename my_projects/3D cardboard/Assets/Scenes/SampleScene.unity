@@ -365,6 +365,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   l_prefab: {fileID: 475973484}
   r_prefab: {fileID: 1012740037}
+  delay_sec: 0.1
+  x_Angle: -15
+  z_Angle: 0
+  l_Angle: 0
+  r_Angle: 1
+  step_angle: 0.5
 --- !u!4 &1714091442
 Transform:
   m_ObjectHideFlags: 0
@@ -388,11 +394,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1714091442}
     m_Modifications:
-    - target: {fileID: -942079599718750257, guid: 0948d0d571a6a3f8391306fa321b2582,
-        type: 3}
-      propertyPath: m_UseGravity
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 3720254994708679407, guid: 0948d0d571a6a3f8391306fa321b2582,
         type: 3}
       propertyPath: m_Name
@@ -451,6 +452,11 @@ PrefabInstance:
     - target: {fileID: 3720254994708679395, guid: 0948d0d571a6a3f8391306fa321b2582,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -942079599718750257, guid: 0948d0d571a6a3f8391306fa321b2582,
+        type: 3}
+      propertyPath: m_UseGravity
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

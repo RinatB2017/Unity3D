@@ -7,18 +7,33 @@ public class Worker : MonoBehaviour
     public GameObject l_prefab;
     public GameObject r_prefab;
 
+    public float delay_sec = 0.1f;
+
+    public float x_Angle = -15f;
+    public float z_Angle = 0f;
+
+    public float l_Angle = 0f;
+    public float r_Angle = 0.1f;
+    public float step_angle = 0.1f;
+
+    private IEnumerator coroutine;
+
     void Start()
     {
-        float xAngle = 0f;
-        float yAngle = 45f;
-        float zAngle = 0f;
+        l_prefab.transform.Rotate(x_Angle, l_Angle, z_Angle, Space.Self);
+        r_prefab.transform.Rotate(x_Angle, r_Angle, z_Angle, Space.Self);
 
-        l_prefab.transform.Rotate(xAngle, yAngle, zAngle, Space.Self);
-        r_prefab.transform.Rotate(xAngle, yAngle, zAngle, Space.Self);
+        coroutine = RotateCubes();
+        StartCoroutine(coroutine);
     }
 
-    void Update()
-    {
-        
+	private IEnumerator RotateCubes() 
+	{
+        while (true)
+        {
+            l_prefab.transform.Rotate(0, step_angle, 0, Space.Self);
+            r_prefab.transform.Rotate(0, step_angle, 0, Space.Self);
+            yield return new WaitForSeconds(delay_sec);
+        }
     }
 }
