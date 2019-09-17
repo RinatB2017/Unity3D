@@ -50,7 +50,8 @@ public class RoadController : DebugClass
             temp_pos = l_obj[n].transform.position;
             temp_pos.y -= step;
 
-            l_obj[n].GetComponent<Rigidbody2D>().MovePosition(temp_pos);
+            // l_obj[n].GetComponent<Rigidbody2D>().MovePosition(temp_pos);
+            l_obj[n].transform.position = temp_pos;
         }
     }
 
