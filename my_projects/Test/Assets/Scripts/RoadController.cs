@@ -31,11 +31,15 @@ public class RoadController : DebugClass
     {
         l_obj = new List<GameObject>();
 
+        position.x = 0f;
+        position.y = 0f;
+
         for(int n=0; n<prefabs.Count; n++)
         {
             GameObject obj = Instantiate(prefabs[n], position, Quaternion.identity);
-            h_road += prefabs[n].GetComponent<SpriteRenderer>().bounds.size.y;
-            position.y += prefabs[n].GetComponent<SpriteRenderer>().bounds.size.y;
+            float h = prefabs[n].GetComponent<SpriteRenderer>().bounds.size.y;
+            h_road += h;
+            position.y += h;
             l_obj.Add(obj);
         }
     }
