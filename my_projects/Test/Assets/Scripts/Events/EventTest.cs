@@ -13,6 +13,7 @@ public class EventTest : MonoBehaviour
 
     void OnEnable ()
     {
+        print("EventTest: OnEnable");
         EventManager.StartListening ("test", someListener);
         EventManager.StartListening ("Spawn", SomeOtherFunction);
         EventManager.StartListening ("Destroy", SomeThirdFunction);
@@ -20,6 +21,7 @@ public class EventTest : MonoBehaviour
 
     void OnDisable ()
     {
+        print("EventTest: OnDisable");
         EventManager.StopListening ("test", someListener);
         EventManager.StopListening ("Spawn", SomeOtherFunction);
         EventManager.StopListening ("Destroy", SomeThirdFunction);
