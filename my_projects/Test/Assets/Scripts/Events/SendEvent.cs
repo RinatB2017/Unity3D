@@ -6,6 +6,9 @@ public class SendEvent : MonoBehaviour
 {
     void OnMouseDown()
     {
-        EventManager.TriggerEvent ("Spawn");
+        float x = 1f / 3f;
+        string text = "X = " + x.ToString();
+
+        EventManager.SendEvent ("MyEvent", text);
     }
 }

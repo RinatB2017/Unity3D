@@ -1,1 +1,2 @@
 https://unity3d.com/ru/learn/tutorials/topics/scripting/events-creating-simple-messaging-system
+https://mopsicus.ru/all/unity-event-manager-with-parameters/
