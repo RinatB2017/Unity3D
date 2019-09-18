@@ -7,7 +7,7 @@ public class SendEvent : MonoBehaviour
     void OnMouseDown()
     {
         float x = 1f / 3f;
-        string text = "X = " + x.ToString();
+        string text = "X = " + x;
 
         EventManager.SendEvent ("MyEvent", text);
     }
