@@ -13,7 +13,7 @@ public class EventTest : MonoBehaviour
 
     void OnEnable ()
     {
-        print("EventTest: OnEnable");
+        // print("EventTest: OnEnable");
         EventManager.StartListening ("test", someListener);
         EventManager.StartListening ("Spawn", SomeOtherFunction);
         EventManager.StartListening ("Destroy", SomeThirdFunction);
@@ -21,7 +21,7 @@ public class EventTest : MonoBehaviour
 
     void OnDisable ()
     {
-        print("EventTest: OnDisable");
+        // print("EventTest: OnDisable");
         EventManager.StopListening ("test", someListener);
         EventManager.StopListening ("Spawn", SomeOtherFunction);
         EventManager.StopListening ("Destroy", SomeThirdFunction);
@@ -29,16 +29,16 @@ public class EventTest : MonoBehaviour
 
     void SomeFunction ()
     {
-        Debug.Log ("Some Function was called!");
+        Debug.Log ("test: Some Function was called!");
     }
     
     void SomeOtherFunction ()
     {
-        Debug.Log ("Some Other Function was called!");
+        Debug.Log ("Spawn: Some Other Function was called!");
     }
     
     void SomeThirdFunction ()
     {
-        Debug.Log ("Some Third Function was called!");
+        Debug.Log ("Destroy: Some Third Function was called!");
     }
 }
