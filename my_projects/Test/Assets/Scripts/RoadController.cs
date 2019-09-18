@@ -62,6 +62,7 @@ public class RoadController : DebugClass
     void Update()
     {
         move();
+        
         //---
         pb.SendMessage("set_value", pb_value);
         //---
