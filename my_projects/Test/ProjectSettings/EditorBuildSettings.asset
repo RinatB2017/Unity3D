@@ -68,4 +68,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Test_read_write_file.unity
     guid: 1d257c5201df646988f2df7cb0d8de3d
+  - enabled: 1
+    path: Assets/Scenes/Test_events.unity
+    guid: e88ada5447d28c418af062640c0eee64
   m_configObjects: {}

@@ -131,7 +131,7 @@ GameObject:
   - component: {fileID: 161987112}
   - component: {fileID: 161987111}
   m_Layer: 0
-  m_Name: Manager
+  m_Name: EventManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -566,8 +566,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -2, y: 307.7}
-  m_SizeDelta: {x: 1227.8, y: 52.6}
+  m_AnchoredPosition: {x: -2, y: 312.7}
+  m_SizeDelta: {x: 1227.8, y: 42.6}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1795478203
 MonoBehaviour:
@@ -594,7 +594,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 0.19607843, b: 0.19607843, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:

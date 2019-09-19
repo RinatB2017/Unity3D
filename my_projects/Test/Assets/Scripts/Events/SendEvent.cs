@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class SendEvent : MonoBehaviour
 {
+    private int x = 0;
+
     void OnEnable()
     {
         print("OnEnable");
@@ -15,8 +17,7 @@ public class SendEvent : MonoBehaviour
 
     void OnMouseDown()
     {
-        float x = 1f / 3f;
-        string text = "X = " + x;
+        string text = "Cnt = " + x++;
 
         EventManager.SendEvent ("MyEvent", text);
     }

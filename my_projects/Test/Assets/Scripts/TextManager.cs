@@ -1,17 +1,27 @@
-﻿// using System.Collections;
-// using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 
 public class TextManager : MonoBehaviour
 {
-    void Start()
+    private Text label;
+
+    void OnEnable()
     {
         EventManager.StartListening ("MyEvent", MyFunction);
     }
 
+    void OnDisable()
+    {
+        EventManager.StopListening ("MyEvent", MyFunction);
+    }
+
+    void Awake()
+    {
+        label = GetComponent<Text>();
+    }
+
     void MyFunction (string param)
     {
-        GetComponent<Text>().text = param;
+        label.text = param;
     }
 }
