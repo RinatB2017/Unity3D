@@ -70,9 +70,4 @@ public class Cannon : MonoBehaviour
         ball = Instantiate(cannonball, temp_vector, Quaternion.identity);
         ball.GetComponent<Rigidbody2D>().AddForce(m_NewForce, ForceMode2D.Impulse);
     }
-
-    void Update()
-    {
-        
-    }
 }
