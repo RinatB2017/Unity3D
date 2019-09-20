@@ -8,8 +8,8 @@ public class RoadController : DebugClass
     public Vector2 position;
     public float step = 0.1f;
 
-    public GameObject pb;
-    public float pb_value = 80;
+    // public GameObject pb;
+    // public float pb_value = 80;
 
     private List<GameObject> l_obj;
     private float h_road = 0f;
@@ -64,7 +64,7 @@ public class RoadController : DebugClass
         move();
         
         //---
-        pb.SendMessage("set_value", pb_value);
+        // pb.SendMessage("set_value", pb_value);
         //---
     }
 }
