@@ -213,7 +213,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &541259469
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -340,14 +340,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   prefabs:
-  - {fileID: 1672359976717507047, guid: 920af86c6668ff706be2bbe4d73af16f, type: 3}
+  - {fileID: 3742113715257715582, guid: 1198f8bef98e536698008befc3d38c04, type: 3}
   - {fileID: 4840385022381348293, guid: 3e557df62673fdb06a62edd4b592d7f8, type: 3}
   - {fileID: 617125744042337945, guid: 5afc9eedb87f30a5b81a4698d22a706f, type: 3}
   - {fileID: 4848820871231561041, guid: be4f3c8031d9f2204b8362738e89414e, type: 3}
   position: {x: 0, y: -3}
   step: 0.1
-  pb: {fileID: 1902128193}
-  pb_value: 80
 --- !u!61 &803427263
 BoxCollider2D:
   m_ObjectHideFlags: 0
