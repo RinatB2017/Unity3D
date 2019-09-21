@@ -5,6 +5,8 @@ using UnityEngine.UI;
 
 public class TestPlayer : MonoBehaviour
 {
+    public Joystick joystick;
+
     public Text text_x;
     public Text text_y;
 
@@ -17,9 +19,16 @@ public class TestPlayer : MonoBehaviour
 
     void Update()
     {
-        transform.Translate (Input.GetAxis("Horizontal")*speed,
-                             Input.GetAxis("Vertical")*speed,
+        // keyboard
+        transform.Translate (Input.GetAxis("Horizontal") * speed,
+                             Input.GetAxis("Vertical")   * speed,
                              0);
+
+        // joystick
+        transform.Translate (joystick.Horizontal * speed,
+                             joystick.Vertical   * speed,
+                             0);
+
         float l_x = transform.localPosition.x;
         float l_y = transform.localPosition.y;
         text_x.text = l_x.ToString();
