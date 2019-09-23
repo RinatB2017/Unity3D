@@ -29,10 +29,7 @@ public class Tower : MonoBehaviour
     void Awake()
     {
         cam = Camera.main;
-    }
 
-    void Start()
-    {
         int index = 0;
         for(float z=start_z; z<=(start_z + cnt_z); z+=1.0f)
         {
@@ -50,8 +47,6 @@ public class Tower : MonoBehaviour
                 }
             }
         }
-        // Vector3 temp_vector = new Vector3(1, 0.5f, 1);
-        // Instantiate(prefab, temp_vector, Quaternion.identity);
     }
 
     void self_explosion()
@@ -79,16 +74,20 @@ public class Tower : MonoBehaviour
         vp.y = y;
         vp.z = z;
 
-        cam.transform.position = vp;
+        cam.transform.Translate(vp);
     }
 
-    // Update is called once per frame
+    void test_0()
+    {
+        move_cam();
+        if (Input.GetButtonDown("Jump"))
+        {
+            self_explosion();
+        }
+    }
+
     void Update()
     {
-        if (Input.GetButtonDown("Fire1"))
-        {
-            //self_explosion();
-            move_cam();
-        }
+        // test_0();
     }
 }
