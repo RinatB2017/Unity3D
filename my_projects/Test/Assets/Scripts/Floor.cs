@@ -7,10 +7,16 @@ using TMPro;
 public class Floor : MonoBehaviour
 {
     public TextMeshPro info;
+    private float height = 0f;
 
     void Start()
     {
+        height = GetComponent<SpriteRenderer>().bounds.size.y;
+    }
 
+    float get_height()
+    {
+        return height;
     }
 
     void up()

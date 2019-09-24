@@ -5,7 +5,8 @@ using UnityEngine;
 public class PrefabController : MonoBehaviour
 {
     public GameObject floor;
-    
+    public int max_floor = 10;
+
     void Start()
     {
         // test();
