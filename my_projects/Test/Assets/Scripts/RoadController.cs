@@ -40,9 +40,9 @@ public class RoadController : DebugClass
         for(int n=0; n<prefabs.Count; n++)
         {
             GameObject obj = Instantiate(prefabs[n], position, Quaternion.identity);
-            // float h = prefabs[n].GetComponent<SpriteRenderer>().bounds.size.y;
+            float h = prefabs[n].GetComponent<SpriteRenderer>().bounds.size.y;
             // float h = prefabs[n].GetComponent<Collider2D>().bounds.size.y;
-            float h = 7.68f;
+            // float h = 7.68f;
             print("H " + h);
             h_road += h;
             position.y += h;

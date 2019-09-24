@@ -74,4 +74,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Test_scaler.unity
     guid: 62300ba6036c621198560e6156c2e384
+  - enabled: 1
+    path: Assets/Scenes/Test_prefabs.unity
+    guid: b57f3863875beef6c8e3125caa77450a
   m_configObjects: {}
