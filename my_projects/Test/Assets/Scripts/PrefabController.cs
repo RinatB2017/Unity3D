@@ -6,6 +6,23 @@ public class PrefabController : MonoBehaviour
 {
     void Start()
     {
+        // test();
+
+        // var foundObjects = FindObjectsOfType<Bomb>();
+        // print(foundObjects + " : " + foundObjects.Length);
+
+        // var className = Resources.Load<Bomb>("Assets");
+        // print(className);
+
+        // var enemy = Resources.Load("Prefabs/Enemy", typeof(GameObject));
+        // var enemy = Resources.Load<Enemy>("Enemy");
+        // print(enemy);
+
+        // GameObject instance = Instantiate(Resources.Load("Enemy", typeof(GameObject))) as GameObject;
+    }
+
+    void test()
+    {
         var obj = FindObjectOfType<Floor>();
         if(obj)
         {
@@ -19,18 +36,6 @@ public class PrefabController : MonoBehaviour
         {
             print("NO");
         }
-
-        // var foundObjects = FindObjectsOfType<Bomb>();
-        // print(foundObjects + " : " + foundObjects.Length);
-
-        // var className = Resources.Load<Bomb>("Assets");
-        // print(className);
-
-        // var enemy = Resources.Load("Prefabs/Enemy", typeof(GameObject));
-        // var enemy = Resources.Load<Enemy>("Enemy");
-        // print(enemy);
-
-        // GameObject instance = Instantiate(Resources.Load("Enemy", typeof(GameObject))) as GameObject;
     }
 
     void Update()
