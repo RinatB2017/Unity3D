@@ -4,21 +4,12 @@ using UnityEngine;
 
 public class PrefabController : MonoBehaviour
 {
+    public GameObject floor;
+    
     void Start()
     {
         // test();
-
-        // var foundObjects = FindObjectsOfType<Bomb>();
-        // print(foundObjects + " : " + foundObjects.Length);
-
-        // var className = Resources.Load<Bomb>("Assets");
-        // print(className);
-
-        // var enemy = Resources.Load("Prefabs/Enemy", typeof(GameObject));
-        // var enemy = Resources.Load<Enemy>("Enemy");
-        // print(enemy);
-
-        // GameObject instance = Instantiate(Resources.Load("Enemy", typeof(GameObject))) as GameObject;
+        // test2();
     }
 
     void test()
@@ -36,6 +27,21 @@ public class PrefabController : MonoBehaviour
         {
             print("NO");
         }
+    }
+
+    void test2()
+    {
+        // var foundObjects = FindObjectsOfType<Bomb>();
+        // print(foundObjects + " : " + foundObjects.Length);
+
+        // var className = Resources.Load<Bomb>("Assets");
+        // print(className);
+
+        // var enemy = Resources.Load("Prefabs/Enemy", typeof(GameObject));
+        // var enemy = Resources.Load<Enemy>("Enemy");
+        // print(enemy);
+
+        // GameObject instance = Instantiate(Resources.Load("Enemy", typeof(GameObject))) as GameObject;
     }
 
     void Update()

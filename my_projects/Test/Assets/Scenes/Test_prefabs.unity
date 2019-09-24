@@ -170,7 +170,7 @@ PrefabInstance:
     - target: {fileID: 4306989606125065684, guid: 331c4e0125bfe97b58a30156e44ec2a6,
         type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4306989606125065684, guid: 331c4e0125bfe97b58a30156e44ec2a6,
         type: 3}
@@ -215,27 +215,42 @@ PrefabInstance:
     - target: {fileID: 48393614305913230, guid: 331c4e0125bfe97b58a30156e44ec2a6,
         type: 3}
       propertyPath: m_textInfo.characterCount
-      value: 0
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 48393614305913230, guid: 331c4e0125bfe97b58a30156e44ec2a6,
         type: 3}
       propertyPath: m_textInfo.spaceCount
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 48393614305913230, guid: 331c4e0125bfe97b58a30156e44ec2a6,
         type: 3}
       propertyPath: m_textInfo.wordCount
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 48393614305913230, guid: 331c4e0125bfe97b58a30156e44ec2a6,
         type: 3}
       propertyPath: m_textInfo.lineCount
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 48393614305913230, guid: 331c4e0125bfe97b58a30156e44ec2a6,
         type: 3}
       propertyPath: m_textInfo.pageCount
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 48393614305913230, guid: 331c4e0125bfe97b58a30156e44ec2a6,
+        type: 3}
+      propertyPath: m_fontSize
+      value: 65
+      objectReference: {fileID: 0}
+    - target: {fileID: 48393614305913230, guid: 331c4e0125bfe97b58a30156e44ec2a6,
+        type: 3}
+      propertyPath: m_fontSizeBase
+      value: 65
+      objectReference: {fileID: 0}
+    - target: {fileID: 48393614305913230, guid: 331c4e0125bfe97b58a30156e44ec2a6,
+        type: 3}
+      propertyPath: m_firstOverflowCharacterIndex
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 8846812504371189591, guid: 331c4e0125bfe97b58a30156e44ec2a6,
         type: 3}
@@ -444,6 +459,21 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 48393614305913230, guid: 331c4e0125bfe97b58a30156e44ec2a6,
+        type: 3}
+      propertyPath: m_fontSize
+      value: 65
+      objectReference: {fileID: 0}
+    - target: {fileID: 48393614305913230, guid: 331c4e0125bfe97b58a30156e44ec2a6,
+        type: 3}
+      propertyPath: m_fontSizeBase
+      value: 65
+      objectReference: {fileID: 0}
+    - target: {fileID: 48393614305913230, guid: 331c4e0125bfe97b58a30156e44ec2a6,
+        type: 3}
+      propertyPath: m_firstOverflowCharacterIndex
+      value: -1
+      objectReference: {fileID: 0}
     - target: {fileID: 8846812504371189591, guid: 331c4e0125bfe97b58a30156e44ec2a6,
         type: 3}
       propertyPath: m_Mesh
@@ -517,5 +547,5 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
