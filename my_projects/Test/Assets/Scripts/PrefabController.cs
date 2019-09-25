@@ -1,16 +1,29 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Tilemaps;
 
 public class PrefabController : MonoBehaviour
 {
-    public GameObject floor;
+    public GameObject prefab;
     public int max_floor = 10;
 
     void Start()
     {
         // test();
         // test2();
+
+        float h = prefab.GetComponent<TilemapRenderer>().bounds.size.y;
+        print(h);
+
+        // var tilemap = prefab.GetComponent<Tilemap>();
+        // if(tilemap == null)
+        // {
+        //     print("tilemap not found");
+        //     return;
+        // }
+        // float h = tilemap.GetComponent<TilemapRenderer>().bounds.size.y;
+        // print(h);
     }
 
     void test()
