@@ -4,7 +4,10 @@ using System.IO;
 
 public class HandleTextFile : MonoBehaviour
 {
+#if UNITY_EDITOR
     [MenuItem("Tools/Write file")]
+    // [MenuItem("AssetDatabase/ImportExample")]
+#endif
     static void WriteString()
     {
         string path = "Assets/Resources/test.txt";
@@ -15,14 +18,18 @@ public class HandleTextFile : MonoBehaviour
         writer.Close();
 
         //Re-import the file to update the reference in the editor
+#if UNITY_EDITOR
         AssetDatabase.ImportAsset(path); 
+#endif        
         TextAsset asset = Resources.Load("test") as TextAsset;
 
         //Print the text from the file
         Debug.Log(asset.text);
     }
 
+#if UNITY_EDITOR
     [MenuItem("Tools/Read file")]
+#endif
     static void ReadString()
     {
         string path = "Assets/Resources/test.txt";

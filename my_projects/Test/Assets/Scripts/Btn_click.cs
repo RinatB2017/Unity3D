@@ -8,18 +8,18 @@ public class Btn_click : DebugClass
 
     void Awake()
     {
-        print("btn_click: awake");
+        // print("btn_click: awake");
     }
     
     void OnMouseDown()
     {
-        debug_print("DOWN: " + f_name);
+        // debug_print("DOWN: " + f_name);
         gameObject.SendMessage(f_name, true);
     }
 
     void OnMouseUp()
     {
-        debug_print("UP: " + f_name);
+        // debug_print("UP: " + f_name);
         gameObject.SendMessage(f_name, false);
     }
 }
