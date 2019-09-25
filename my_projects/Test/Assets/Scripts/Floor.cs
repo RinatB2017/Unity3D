@@ -9,40 +9,40 @@ public class Floor : MonoBehaviour
     public TextMeshPro info;
     private float height = 0f;
 
-    void Start()
-    {
-        height = GetComponent<SpriteRenderer>().bounds.size.y;
-    }
-
-    float get_height()
+    public float get_height()
     {
         return height;
     }
 
-    void up()
+    public void up()
     {
         set_text("UP");
     }
 
-    void down()
+    public void down()
     {
         set_text("DOWN");
     }
 
-    void left()
+    public void left()
     {
         set_text("LEFT");
     }
 
-    void right()
+    public void right()
     {
         set_text("RIGHT");
     }
 
-    void set_text(string text)
+    public void set_text(string text)
     {
         info.text = text;
         print(text);
+    }
+
+    void Start()
+    {
+        height = GetComponent<SpriteRenderer>().bounds.size.y;
     }
 
     void Update()
