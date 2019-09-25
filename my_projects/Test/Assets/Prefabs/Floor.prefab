@@ -378,7 +378,6 @@ GameObject:
   - component: {fileID: 4306989605949888188}
   - component: {fileID: 4306989605949888189}
   - component: {fileID: 1071858283585510885}
-  - component: {fileID: 3182140594143971986}
   - component: {fileID: 3293504468792685659}
   m_Layer: 0
   m_Name: osb_down
@@ -476,27 +475,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!50 &3182140594143971986
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4306989605949888191}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 0
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
 --- !u!114 &3293504468792685659
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -521,7 +499,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4306989606125065684}
   - component: {fileID: 4306989606125065687}
-  - component: {fileID: 593517393096213293}
   - component: {fileID: 5554735324123113105}
   m_Layer: 0
   m_Name: Floor
@@ -597,27 +574,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!50 &593517393096213293
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4306989606125065686}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 0
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
 --- !u!114 &5554735324123113105
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -802,7 +758,6 @@ GameObject:
   - component: {fileID: 4306989607214266763}
   - component: {fileID: 4306989607214266760}
   - component: {fileID: 6672775389287880904}
-  - component: {fileID: 2268600636056020350}
   - component: {fileID: 8788581050570100365}
   m_Layer: 0
   m_Name: osb_up
@@ -900,27 +855,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!50 &2268600636056020350
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4306989607214266762}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 0
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
 --- !u!114 &8788581050570100365
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1064,7 +998,6 @@ GameObject:
   - component: {fileID: 726038787088798384}
   - component: {fileID: 2534627004417426755}
   - component: {fileID: 4948024475800009813}
-  - component: {fileID: 2897004989132938330}
   - component: {fileID: 6740083133035596988}
   m_Layer: 0
   m_Name: osb_right
@@ -1162,27 +1095,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!50 &2897004989132938330
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5881124200907572948}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 0
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
 --- !u!114 &6740083133035596988
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1319,7 +1231,6 @@ GameObject:
   - component: {fileID: 2728170800937686030}
   - component: {fileID: 2888816409796680246}
   - component: {fileID: 4550592805248738185}
-  - component: {fileID: 5520754025455730120}
   - component: {fileID: 5326178084733451103}
   m_Layer: 0
   m_Name: osb_left
@@ -1417,27 +1328,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!50 &5520754025455730120
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8861066517787083976}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 0
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
 --- !u!114 &5326178084733451103
 MonoBehaviour:
   m_ObjectHideFlags: 0
