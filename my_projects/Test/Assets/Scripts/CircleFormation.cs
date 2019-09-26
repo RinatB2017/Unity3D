@@ -10,6 +10,7 @@ public class CircleFormation : MonoBehaviour
     public int numberOfObjects = 8;
     public float radius = 3f;
     public float force = 1f;
+    public float offset = 1f;
 
     private List<GameObject> l_prefab;
     private List<GameObject> l_platform;
@@ -37,7 +38,7 @@ public class CircleFormation : MonoBehaviour
             float x = Mathf.Cos(angle) * radius;
             float y = Mathf.Sin(angle) * radius;
             Vector2 pos = transform.position + new Vector3(x, y, 0);
-            pos.y += 1f;
+            pos.y += offset;
             float angleDegrees = -angle*Mathf.Rad2Deg;
 
             GameObject child = Instantiate(prefab, pos, Quaternion.identity);
@@ -74,7 +75,7 @@ public class CircleFormation : MonoBehaviour
             float x = Mathf.Cos(angle) * radius;
             float y = Mathf.Sin(angle) * radius;
             Vector2 pos = new Vector3(x, y, 0);
-            pos.y += 1f;
+            pos.y += offset;
 
             l_prefab[i].GetComponent<Rigidbody2D>().isKinematic = true;
             l_prefab[i].GetComponent<Rigidbody2D>().rotation = 0f;
