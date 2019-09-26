@@ -13,8 +13,8 @@ public class PrefabController : MonoBehaviour
         // test();
         // test2();
 
-        float h = prefab.GetComponent<TilemapRenderer>().bounds.size.y;
-        print(h);
+        // float h = prefab.GetComponent<TilemapRenderer>().bounds.size.y;
+        // print(h);
 
         // var tilemap = prefab.GetComponent<Tilemap>();
         // if(tilemap == null)
