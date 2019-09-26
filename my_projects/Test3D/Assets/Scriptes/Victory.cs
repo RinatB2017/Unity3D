@@ -8,7 +8,7 @@ public class Victory : MonoBehaviour
     {
         if(col.gameObject.tag == "Ball")
         {
-            print("YES");
+            print("Connected " + col.gameObject.tag);
         }
     }
 }

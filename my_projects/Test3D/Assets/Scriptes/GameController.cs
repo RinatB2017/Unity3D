@@ -17,7 +17,7 @@ public class GameController : MonoBehaviour
     {
         body_sphere = sphere.GetComponent<Rigidbody>();
         begin_pos = body_sphere.transform.position;
-;    }
+    }
 
     void Update()
     {
