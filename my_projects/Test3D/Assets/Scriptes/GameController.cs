@@ -11,23 +11,34 @@ public class GameController : MonoBehaviour
 
     private Rigidbody body_sphere;
     private Vector3 m_NewForce;
+    private Vector3 begin_pos;
 
     void Start()
     {
         body_sphere = sphere.GetComponent<Rigidbody>();
-    }
+        begin_pos = body_sphere.transform.position;
+;    }
 
     void Update()
     {
-        if (Input.GetButtonDown("Jump"))
+        if (Input.GetButtonDown("Fire1"))
         {
-            print("Jump");
+            print("Fire");
             
             m_NewForce.x = force_x;
             m_NewForce.y = force_y;
             m_NewForce.z = force_z;
 
             body_sphere.AddForce(m_NewForce, ForceMode.Impulse);
-        }        
+        }
+
+        if (Input.GetButtonDown("Jump"))
+        {
+            print("Jump");
+
+            body_sphere.isKinematic = true;
+            body_sphere.transform.position = begin_pos;
+            body_sphere.isKinematic = false;
+        }
     }
 }
