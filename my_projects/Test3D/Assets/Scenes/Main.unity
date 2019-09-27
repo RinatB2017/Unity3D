@@ -480,9 +480,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sphere: {fileID: 2049427602}
-  force_x: 6
-  force_y: 10
-  force_z: 6
+  force_x: 1
+  force_y: 1
+  force_z: 1
+  force: 10
+  k_move: 0.1
+  k_rot: 0.5
 --- !u!1 &963194225
 GameObject:
   m_ObjectHideFlags: 0
