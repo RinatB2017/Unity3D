@@ -5,9 +5,9 @@ using UnityEngine;
 public class GameController : MonoBehaviour
 {
     public GameObject sphere;
-    public float force_x = 1f;
-    public float force_y = 1f;
-    public float force_z = 1f;
+    public float axes_x = 0f;
+    public float axes_y = 1f;
+    public float axes_z = 1f;
     public float force = 10f;
 
     public float k_move = 0.1f;
@@ -16,6 +16,10 @@ public class GameController : MonoBehaviour
     private Rigidbody body_sphere;
     private Vector3 m_NewForce;
     private Vector3 begin_pos;
+
+    public float runSpeed = 1f;
+    public Joystick rotate_joystick;
+    public Joystick move_joystick;
 
     private List<GameObject> l_cubes;
     private List<Vector3> l_vectors;
@@ -41,24 +45,53 @@ public class GameController : MonoBehaviour
         }
     }
 
+    void move_forward()
+    {
+        print("Forward");
+    }
+
+    void move_back()
+    {
+        print("Back");
+    }
+
+    void fire()
+    {
+        print("Fire");
+        print("Fire");
+        
+        m_NewForce.x = axes_x * force;
+        m_NewForce.y = axes_y * force;
+        m_NewForce.z = axes_z * force;
+
+        // m_NewForce.x = m_MainCamera.transform.rotation.x * force;
+        // m_NewForce.y = m_MainCamera.transform.rotation.y * force;
+        // m_NewForce.z = m_MainCamera.transform.rotation.z * force;
+
+        body_sphere.AddForce(m_NewForce, ForceMode.Impulse);
+    }
+
     void Update()
     {
+        // float rotate_x = rotate_joystick.Horizontal * runSpeed;
+        // float rotate_y = rotate_joystick.Vertical * runSpeed;
+        // float move_x = move_joystick.Horizontal * runSpeed;
+        // float move_y = move_joystick.Vertical * runSpeed;
+
         // движение
         m_MainCamera.transform.Translate (0, 0, Input.GetAxis("Vertical")*k_move);
+        
+        m_MainCamera.transform.Translate (move_joystick.Horizontal*k_move, 
+                                          move_joystick.Vertical*k_move,
+                                          0);
 
         // поворот
         m_MainCamera.transform.Rotate(0, Input.GetAxis("Horizontal")*k_rot, 0, Space.Self);
 
-        if (Input.GetButtonDown("Fire1"))
-        {
-            print("Fire");
-            
-            m_NewForce.x = force_x * force;
-            m_NewForce.y = force_y * force;
-            m_NewForce.z = force_z * force;
-
-            body_sphere.AddForce(m_NewForce, ForceMode.Impulse);
-        }
+        m_MainCamera.transform.Rotate(0,
+                                      rotate_joystick.Vertical*k_rot, 
+                                      rotate_joystick.Horizontal*k_rot,
+                                      Space.Self);
 
         if (Input.GetButtonDown("Jump"))
         {
