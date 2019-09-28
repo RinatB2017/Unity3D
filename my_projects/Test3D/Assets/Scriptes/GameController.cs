@@ -16,7 +16,6 @@ public class GameController : MonoBehaviour
     private GameObject sphere;
     private Rigidbody body_sphere;
     private Vector3 m_NewForce;
-    private Vector3 begin_pos;
 
     public float runSpeed = 1f;
     public Joystick rotate_joystick;
@@ -24,6 +23,9 @@ public class GameController : MonoBehaviour
 
     private List<GameObject> l_cubes;
     private List<Vector3> l_vectors;
+
+    private bool f_forward = false;
+    private bool f_back = false;
 
     Camera m_MainCamera;
 
@@ -43,36 +45,30 @@ public class GameController : MonoBehaviour
         }
     }
 
-    void move_forward()
+    void move_forward(bool state)
     {
-        print("Forward");
-        m_MainCamera.transform.Translate (0, 0, k_move);
+        f_forward = state;
     }
 
-    void move_back()
+    void move_back(bool state)
     {
-        print("Back");
-        m_MainCamera.transform.Translate (0, 0, -k_move);
+        f_back = state;
     }
 
-    void fire()
+    void fire(bool state)
     {
-        print("Fire");
-        print("Fire");
-        
-        // m_NewForce.x = axes_x * force;
-        // m_NewForce.y = axes_y * force;
-        // m_NewForce.z = axes_z * force;
+        if(state)
+        {
+            print("Fire");
+            
+            m_NewForce = m_MainCamera.transform.forward * force;
 
-        m_NewForce.x = m_MainCamera.transform.rotation.x * force;
-        m_NewForce.y = m_MainCamera.transform.rotation.y * force;
-        m_NewForce.z = m_MainCamera.transform.rotation.z * force;
+            Vector3 temp_vector = m_MainCamera.transform.position;
 
-        Vector3 temp_vector = m_MainCamera.transform.position;
-
-        sphere = Instantiate(sphere_prefab, temp_vector, Quaternion.identity);
-        body_sphere = sphere.GetComponent<Rigidbody>();
-        body_sphere.AddForce(m_NewForce, ForceMode.Impulse);
+            sphere = Instantiate(sphere_prefab, temp_vector, Quaternion.identity);
+            body_sphere = sphere.GetComponent<Rigidbody>();
+            body_sphere.AddForce(m_NewForce, ForceMode.Impulse);
+        }
     }
 
     void Update()
@@ -97,13 +93,18 @@ public class GameController : MonoBehaviour
                                       0,
                                       Space.Self);
 
+        if(f_forward)
+        {
+            m_MainCamera.transform.Translate (0, 0, k_move);
+        }
+        if(f_back)
+        {
+            m_MainCamera.transform.Translate (0, 0, -k_move);
+        }
+
         if (Input.GetButtonDown("Jump"))
         {
             print("Jump");
-
-            body_sphere.isKinematic = true;
-            body_sphere.transform.position = begin_pos;
-            body_sphere.isKinematic = false;
 
             Quaternion target = Quaternion.Euler(0, 0, 0);
             for(int n=0; n<l_cubes.Count; n++)
