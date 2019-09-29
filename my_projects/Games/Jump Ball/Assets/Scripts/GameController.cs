@@ -5,6 +5,9 @@ using UnityEngine;
 public class GameController : MonoBehaviour
 {
     public GameObject ball_prefab;
+    public float k_x = 10f;
+    public float k_y = 10f;
+
     private Rigidbody2D ball;
     private Vector3 m_force;
 
@@ -13,14 +16,19 @@ public class GameController : MonoBehaviour
         ball = ball_prefab.GetComponent<Rigidbody2D>();
     }
 
+    void exit()
+    {
+        print("exit");
+    }
+
     void jump_left(bool state)
     {
         if(state)
         {
-            print("Left");
+            // print("Left");
 
-            m_force.x = ball.transform.position.x - 1f;
-            m_force.y = ball.transform.position.x;
+            m_force.x = -k_x;
+            m_force.y = k_y;
             m_force.z = 0;
 
             ball.AddForce(m_force, ForceMode2D.Impulse);
@@ -31,10 +39,10 @@ public class GameController : MonoBehaviour
     {
         if(state)
         {
-            print("Right");
+            // print("Right");
 
-            m_force.x = ball.transform.position.x + 1f;
-            m_force.y = ball.transform.position.x;
+            m_force.x = k_x;
+            m_force.y = k_y;
             m_force.z = 0;
 
             ball.AddForce(m_force, ForceMode2D.Impulse);
