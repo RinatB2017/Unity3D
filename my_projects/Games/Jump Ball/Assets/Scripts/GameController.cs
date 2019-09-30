@@ -11,6 +11,10 @@ public class GameController : MonoBehaviour
     private Rigidbody2D ball;
     private Vector3 m_force;
 
+    private float begin_time = 0f;
+    private float end_time = 0f;
+    private float elapsed_time = 0f;
+
     void Awake()
     {
         ball = ball_prefab.GetComponent<Rigidbody2D>();
@@ -25,11 +29,22 @@ public class GameController : MonoBehaviour
     {
         if(state)
         {
-            // print("Left");
+            begin_time = Time.time;
+        }
+        else
+        {
+            end_time = Time.time;
+            elapsed_time = end_time - begin_time;
 
-            m_force.x = -k_x;
+            m_force.x = -(elapsed_time * 100f / k_x);
             m_force.y = k_y;
             m_force.z = 0;
+
+            /*
+            k_x 100
+            e   x
+             */
+            print("X " + m_force.x);
 
             ball.AddForce(m_force, ForceMode2D.Impulse);
         }
@@ -39,9 +54,15 @@ public class GameController : MonoBehaviour
     {
         if(state)
         {
-            // print("Right");
+            begin_time = Time.time;
+        }
+        else
+        {
+            end_time = Time.time;
+            elapsed_time = end_time - begin_time;
 
-            m_force.x = k_x;
+            m_force.x = (elapsed_time * 100f / k_x);
+            // m_force.x = (k_x * elapsed_time / 100f);
             m_force.y = k_y;
             m_force.z = 0;
 
