@@ -62,7 +62,6 @@ public class GameController : MonoBehaviour
             elapsed_time = end_time - begin_time;
 
             m_force.x = (elapsed_time * 100f / k_x);
-            // m_force.x = (k_x * elapsed_time / 100f);
             m_force.y = k_y;
             m_force.z = 0;
 
