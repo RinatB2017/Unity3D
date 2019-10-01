@@ -36,7 +36,8 @@ public class GameController : MonoBehaviour
             end_time = Time.time;
             elapsed_time = end_time - begin_time;
 
-            m_force.x = -(elapsed_time * 100f / k_x);
+            m_force.x = -(elapsed_time / k_x);
+            if(m_force.x < -k_x) m_force.x = -k_x;
             m_force.y = k_y;
             m_force.z = 0;
 
@@ -44,7 +45,10 @@ public class GameController : MonoBehaviour
             k_x 100
             e   x
              */
-            print("X " + m_force.x);
+            print("jump_left");
+            print("k_x " + k_x);
+            print("elapsed_time " + elapsed_time);
+            print("m_force.x " + m_force.x);
 
             ball.AddForce(m_force, ForceMode2D.Impulse);
         }
@@ -61,9 +65,15 @@ public class GameController : MonoBehaviour
             end_time = Time.time;
             elapsed_time = end_time - begin_time;
 
-            m_force.x = (elapsed_time * 100f / k_x);
+            m_force.x = (elapsed_time / k_x);
+            if(m_force.x > k_x) m_force.x = k_x;
             m_force.y = k_y;
             m_force.z = 0;
+
+            print("jump_right");
+            print("k_x " + k_x);
+            print("elapsed_time " + elapsed_time);
+            print("m_force.x " + m_force.x);
 
             ball.AddForce(m_force, ForceMode2D.Impulse);
         }
