@@ -3,16 +3,16 @@ using System.Collections;
 
 public class Btn_click : MonoBehaviour
 {
-    public GameObject gameObject;
+    public GameObject game_controller;
     public string f_name;
    
     void OnMouseDown()
     {
-        gameObject.SendMessage(f_name, true);
+        game_controller.SendMessage(f_name, true);
     }
 
     void OnMouseUp()
     {
-        gameObject.SendMessage(f_name, false);
+        game_controller.SendMessage(f_name, false);
     }
 }
