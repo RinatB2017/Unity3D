@@ -24,7 +24,19 @@ public class Test_EventManager : MonoBehaviour
         for(int n=0; n<parameters.Length; n++)
         {
 	        print (parameters[n]);
-            print (parameters[n].GetType());
+            System.Type type_param = parameters[n].GetType();
+            if(type_param == typeof(string))
+            {
+                print ("STRING: " + type_param);
+            }
+            if(type_param == typeof(int))
+            {
+                print ("INT: " + type_param);
+            }
+            if(type_param == typeof(float))
+            {
+                print ("FLOAT: " + type_param);
+            }
         }
     }
 
