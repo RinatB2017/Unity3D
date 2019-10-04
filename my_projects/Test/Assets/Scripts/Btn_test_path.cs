@@ -14,6 +14,8 @@ public class Btn_test_path : MonoBehaviour
     
     void OnMouseDown()
     {
+        // path_creator.path.AddSegment(new Vector2(5, 5));
+
         print("Click");
         print("NumSegments " + path_creator.path.NumSegments);
         
