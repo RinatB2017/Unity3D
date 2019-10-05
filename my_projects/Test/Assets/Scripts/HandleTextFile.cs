@@ -5,7 +5,7 @@ using System.IO;
 public class HandleTextFile : MonoBehaviour
 {
 #if UNITY_EDITOR
-    [MenuItem("Tools/Write file")]
+    [MenuItem("XXX/Write file")]
     // [MenuItem("AssetDatabase/ImportExample")]
 #endif
     static void WriteString()
@@ -28,7 +28,7 @@ public class HandleTextFile : MonoBehaviour
     }
 
 #if UNITY_EDITOR
-    [MenuItem("Tools/Read file")]
+    [MenuItem("XXX/Read file")]
 #endif
     static void ReadString()
     {
