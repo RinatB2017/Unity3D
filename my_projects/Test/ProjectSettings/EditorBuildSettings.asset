@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/Test_gravity2.unity
+    guid: c8fb5b66f52d58cd19d27fb085ced12f
+  - enabled: 1
     path: Assets/Scenes/Test_path.unity
     guid: f617a66b63ee1bde8a92b1855be84ac1
   - enabled: 1
