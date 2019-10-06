@@ -1,5 +1,5 @@
 sceneSetups:
-- path: Assets/PathCreator/Examples/Scenes/Follow Path.unity
+- path: Assets/PathCreator/Examples/Scenes/Road.unity
   isLoaded: 1
   isActive: 1
   isSubScene: 0

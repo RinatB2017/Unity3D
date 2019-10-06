@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Calc_path : MonoBehaviour
+public class Calc_path2 : MonoBehaviour
 {
     public PathCreator path_creator;
     public GameObject ball_prefab;
@@ -27,7 +27,7 @@ public class Calc_path : MonoBehaviour
                 path_poins.Add(points[i]);
             }
         }      
-        print("Count " + path_poins.Count);
+        print("Count2 " + path_poins.Count);
 
         index = 0;
         target = path_poins[index];
