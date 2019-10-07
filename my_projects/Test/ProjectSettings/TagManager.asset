@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Ball
   - Bone
+  - Path1
+  - Path2
   layers:
   - Default
   - TransparentFX

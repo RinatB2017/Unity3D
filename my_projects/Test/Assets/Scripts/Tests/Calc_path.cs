@@ -4,18 +4,36 @@ using UnityEngine;
 
 public class Calc_path : MonoBehaviour
 {
-    public PathCreator path_creator;
     public GameObject ball_prefab;
 
     List<Vector2> path_poins;
     int index = 0;
     public float speed = 10.0f;
 
+    private PathCreator path_creator;
     private Vector2 target;
+
+    PathCreator get_path(string tag)
+    {
+        var foundObjects = FindObjectsOfType<PathCreator>();
+        print("Found: " + foundObjects + " : " + foundObjects.Length);
+
+        for(int n=0; n<foundObjects.Length; n++)
+        {
+            var temp = foundObjects[n].GetComponent<PathCreator>();
+            if(temp != null)
+            {
+                if(temp.tag == tag) return temp;
+            }
+        }
+        return null;
+    }
 
     void Awake()
     {
         path_poins = new List<Vector2>();
+
+        path_creator = get_path("Path1");
 
         // print("NumSegments " + path_creator.path.NumSegments);
         for(int n=0; n<path_creator.path.NumSegments; n++)
