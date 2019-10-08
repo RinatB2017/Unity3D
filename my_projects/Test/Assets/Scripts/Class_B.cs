@@ -5,13 +5,13 @@ using UnityEngine;
 public class Class_B : MonoBehaviour
 {
     public string name_B;
-    
+    protected string my_name = "Class_B";
+
     void Start()
     {
-        
+
     }
 
-    // Update is called once per frame
     void Update()
     {
         

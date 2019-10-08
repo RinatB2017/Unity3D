@@ -8,10 +8,10 @@ public class Class_A : Class_B
 
     void Start()
     {
-        
+        print("Name = " + my_name);        
+        name_B = "XXX";
     }
 
-    // Update is called once per frame
     void Update()
     {
         
