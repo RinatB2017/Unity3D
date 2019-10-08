@@ -8,8 +8,8 @@ public class TestDrawLine : MonoBehaviour
     void Start()
     {
         Vector3 begin = new Vector3(0f, 0f, 0f);
-        Vector3 end = new Vector3(3f, 3f, 0f);
-        Color color = new Color(1f, 0f, 0f, 0f);
+        Vector3 end   = new Vector3(3f, 3f, 0f);
+        Color color   = new Color(1f, 0f, 0f, 0f);
 
         DrawLine(begin, end, color, 1f);
     }
