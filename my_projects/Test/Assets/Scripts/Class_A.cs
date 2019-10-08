@@ -11,9 +11,4 @@ public class Class_A : Class_B
         print("Name = " + my_name);        
         name_B = "XXX";
     }
-
-    void Update()
-    {
-        
-    }
 }
