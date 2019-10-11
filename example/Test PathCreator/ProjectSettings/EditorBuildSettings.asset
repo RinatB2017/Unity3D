@@ -6,6 +6,18 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/SampleScene.unity
-    guid: 2cda990e2423bbf4892e6590ba056729
+    path: Assets/PathCreator/Examples/Scenes/Follow Path.unity
+    guid: c1e712ad623461e418f182144cf61384
+  - enabled: 1
+    path: Assets/PathCreator/Examples/Scenes/Generate Path.unity
+    guid: 3145d476fb2c7f242875d23b77320de4
+  - enabled: 1
+    path: Assets/PathCreator/Examples/Scenes/Object Placement.unity
+    guid: f9d700f5f914447f48566abe5b02d921
+  - enabled: 1
+    path: Assets/PathCreator/Examples/Scenes/Path as Prefab.unity
+    guid: 7c3960531f0fd44beaacc5037d708071
+  - enabled: 1
+    path: Assets/PathCreator/Examples/Scenes/Road.unity
+    guid: 8f020cfa1fb7ded47926b050b82adbe6
   m_configObjects: {}
