@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class Test_OverlapCircle : MonoBehaviour
 {
@@ -16,10 +14,5 @@ public class Test_OverlapCircle : MonoBehaviour
         for(int n=0; n<hitColliders.Length; n++) {
             Destroy(hitColliders[n].gameObject);
         }
-    }
-
-    void Update()
-    {
-        
     }
 }
