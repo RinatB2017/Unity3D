@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class RotateSphere : MonoBehaviour {
     public GameObject p_sphere;
+    GameObject sphere;
     float angle = 0f;
     public float inc_angle = 0.1f;
     public float radius = 3f;
@@ -18,6 +19,12 @@ public class RotateSphere : MonoBehaviour {
 
     void Start () {
         angle = 0f;
+
+        Vector3 pos;
+        pos.x = 0f;
+        pos.y = 0f;
+        pos.z = 0f;
+        sphere = Instantiate(p_sphere, pos, Quaternion.identity);
     }
 
     void Update () {
@@ -30,7 +37,7 @@ public class RotateSphere : MonoBehaviour {
         new_pos.y = y;
         new_pos.z = z;
 
-        p_sphere.transform.position = new_pos;
+        sphere.transform.position = new_pos;
 
         angle += inc_angle;
         if (angle >= 360f) {
