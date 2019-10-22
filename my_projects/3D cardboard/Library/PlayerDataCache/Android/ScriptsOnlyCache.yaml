@@ -1,6 +1,7 @@
 ScriptsOnlyBuild:
   usedScripts:
     Assembly-CSharp.dll:
+    - MoveCapsule
     - RotateCube
     - RotateSphere
     UnityEditor.TestRunner.dll:
@@ -42,9 +43,13 @@ ScriptsOnlyBuild:
       Script: {instanceID: 9984}
     - Class: 114
       Script: {instanceID: 10460}
+    - Class: 114
+      Script: {instanceID: 10532}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 135
+      Script: {instanceID: 0}
+    - Class: 136
       Script: {instanceID: 0}
     - Class: 157
       Script: {instanceID: 0}
@@ -279,6 +284,12 @@ ScriptsOnlyBuild:
     assemblyName: UnityEngine.TestRunner.dll
     namespaceName: UnityEngine.TestTools.TestRunner.Callbacks
     className: RemoteTestResultSender
+  - hash:
+      serializedVersion: 2
+      Hash: 9284f273f270a398ffe9991d16234a44
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: MoveCapsule
   - hash:
       serializedVersion: 2
       Hash: 4fd8bf02e3089425d3502e26c44ba31a

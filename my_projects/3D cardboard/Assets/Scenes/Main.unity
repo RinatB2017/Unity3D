@@ -167,7 +167,7 @@ Camera:
     serializedVersion: 2
     x: 0.5
     y: 0
-    width: 0.5
+    width: 1
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
@@ -339,9 +339,9 @@ Camera:
   m_FocalLength: 50
   m_NormalizedViewPortRect:
     serializedVersion: 2
-    x: 0
+    x: -0.5
     y: 0
-    width: 0.5
+    width: 1
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
@@ -439,6 +439,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   p_capsule: {fileID: 5275725741642972633, guid: b509349424b692cf5a862cdb592f79f0,
     type: 3}
+  min_dist: -11
+  max_dist: 100
+  inc_dict: 0.5
 --- !u!1 &2118204535
 GameObject:
   m_ObjectHideFlags: 0
