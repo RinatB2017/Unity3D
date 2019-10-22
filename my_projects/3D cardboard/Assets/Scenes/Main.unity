@@ -427,7 +427,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   p_sphere: {fileID: 1781248194}
-  inc_angle: 0.5
+  inc_angle: 1
   radius: 3
 --- !u!1 &2118204535
 GameObject:
@@ -528,6 +528,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 740852530335944979, guid: 28318c37332374f4e8c93363ae0853e2,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 740852530335944979, guid: 28318c37332374f4e8c93363ae0853e2,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 740852530335944979, guid: 28318c37332374f4e8c93363ae0853e2,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 28318c37332374f4e8c93363ae0853e2, type: 3}
 --- !u!1001 &7453710636886280619
@@ -555,7 +570,7 @@ PrefabInstance:
     - target: {fileID: 7453710637521434989, guid: bda38458ddf87782082f347ba9dc3bac,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -5
+      value: -3
       objectReference: {fileID: 0}
     - target: {fileID: 7453710637521434989, guid: bda38458ddf87782082f347ba9dc3bac,
         type: 3}

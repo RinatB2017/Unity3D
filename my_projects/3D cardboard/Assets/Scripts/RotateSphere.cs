@@ -22,7 +22,7 @@ public class RotateSphere : MonoBehaviour {
 
     void Update () {
         float x = Mathf.Cos (angle * Mathf.Deg2Rad) * radius;
-        float y = 0f;
+        float y = 1f;
         float z = Mathf.Sin (angle * Mathf.Deg2Rad) * radius;
 
         Vector3 new_pos;
