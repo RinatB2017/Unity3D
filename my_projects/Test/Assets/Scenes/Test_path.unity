@@ -881,7 +881,8 @@ PrefabInstance:
       propertyPath: m_GravityScale
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5604333181728816589, guid: 8dd2ed134a80c420f98a3f903809b16e, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 8dd2ed134a80c420f98a3f903809b16e, type: 3}
 --- !u!4 &1878580487 stripped
 Transform:

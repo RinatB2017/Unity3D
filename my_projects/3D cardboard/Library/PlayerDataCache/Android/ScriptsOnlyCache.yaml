@@ -6,7 +6,6 @@ ScriptsOnlyBuild:
     - RotateSphere
     UnityEditor.TestRunner.dll:
     - UnityEditor.TestTools.TestRunner.Api.CallbacksHolder
-    - UnityEditor.TestTools.TestRunner.TestListCacheData
   sceneClasses:
     Assets/Scenes/Main.unity:
     - Class: 1
