@@ -1,5 +1,5 @@
 sceneSetups:
-- path: Assets/Scenes/Test_events.unity
+- path: Assets/Scenes/Test_OverlapCircleAll.unity
   isLoaded: 1
   isActive: 1
   isSubScene: 0
