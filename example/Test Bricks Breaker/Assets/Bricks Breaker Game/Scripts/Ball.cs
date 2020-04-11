@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
 
 public class Ball : MonoBehaviour {
@@ -21,7 +22,7 @@ public class Ball : MonoBehaviour {
 	public GameObject shrink;
 	public GameObject death;
 	public GameObject bigball;
-	public GUIText gscore;
+	public Text gscore;
 	float y1=0;
 	float y2=0;
 	AudioSource[] a;
@@ -34,11 +35,11 @@ public class Ball : MonoBehaviour {
 
 	void Start() {
 		script1=GameObject.Find("paddle1");
-		gscore=GameObject.Find("gscore").GetComponent<GUIText>();
+		gscore=GameObject.Find("gscore").GetComponent<Text>();
 		if(PlayerPrefs.GetInt("game")==1)
 		{
 			script1.GetComponent<Player>().enabled=false;
-			rigidbody2D.velocity=Vector2.zero;
+			GetComponent<Rigidbody2D>().velocity=Vector2.zero;
 			Invoke("startpause", 1);
 			PlayerPrefs.SetInt("game", 0);
 			PlayerPrefs.Save();
@@ -55,7 +56,7 @@ public class Ball : MonoBehaviour {
 		if(PlayerPrefs.GetInt("game")==0)
 		{
 			script1.GetComponent<Player>().enabled=true;
-			rigidbody2D.velocity=new Vector2(Random.Range(-2f,2f),Random.Range(1,4f)).normalized*PlayerPrefs.GetInt("speed");
+			GetComponent<Rigidbody2D>().velocity=new Vector2(Random.Range(-2f,2f),Random.Range(1,4f)).normalized*PlayerPrefs.GetInt("speed");
 		}
 	}
 
@@ -64,7 +65,7 @@ public class Ball : MonoBehaviour {
 	{
 		if(PlayerPrefs.GetInt("speed")==4 || PlayerPrefs.GetInt("speed")==10)
 		{
-			rigidbody2D.velocity=rigidbody2D.velocity.normalized*PlayerPrefs.GetInt("speed");
+			GetComponent<Rigidbody2D>().velocity=GetComponent<Rigidbody2D>().velocity.normalized*PlayerPrefs.GetInt("speed");
 			Invoke("speed", 8);
 		}
 
@@ -86,7 +87,7 @@ public class Ball : MonoBehaviour {
 		y2=transform.position.y;
 		if(y1==y2)
 		{
-			rigidbody2D.velocity=new Vector2(transform.position.x, Random.Range(-1,1)).normalized*PlayerPrefs.GetInt("speed");
+			GetComponent<Rigidbody2D>().velocity=new Vector2(transform.position.x, Random.Range(-1,1)).normalized*PlayerPrefs.GetInt("speed");
 		}
 	}
 
@@ -94,7 +95,7 @@ public class Ball : MonoBehaviour {
 	{
 		PlayerPrefs.SetInt("speed", 6);
 		PlayerPrefs.Save();
-		rigidbody2D.velocity=rigidbody2D.velocity.normalized*PlayerPrefs.GetInt("speed");
+		GetComponent<Rigidbody2D>().velocity=GetComponent<Rigidbody2D>().velocity.normalized*PlayerPrefs.GetInt("speed");
 	}
 	void OnCollisionEnter2D(Collision2D col) 
 	{
@@ -102,7 +103,7 @@ public class Ball : MonoBehaviour {
 		if (col.gameObject.tag=="Player") 
 		{
 			a[0].Play();
-			rigidbody2D.velocity =  new Vector2(Random.Range(-2f,2f), Random.Range(1,4f)).normalized*PlayerPrefs.GetInt("speed");
+			GetComponent<Rigidbody2D>().velocity =  new Vector2(Random.Range(-2f,2f), Random.Range(1,4f)).normalized*PlayerPrefs.GetInt("speed");
 			//rigidbody2D.velocity=
 		}
 		if(col.gameObject.tag=="diamond")
@@ -164,7 +165,7 @@ public class Ball : MonoBehaviour {
 		if(PlayerPrefs.GetInt("count")>=PlayerPrefs.GetInt("bricks"))
 		{
 			GUI.Label(new Rect(Screen.width/2-50f, Screen.height/2, 100, 10), "LEVEL "+PlayerPrefs.GetInt("level"), style1);
-			rigidbody2D.velocity=Vector2.zero;
+			GetComponent<Rigidbody2D>().velocity=Vector2.zero;
 			script1.GetComponent<Player>().enabled=false;
 			Invoke("next", 2);
 		}

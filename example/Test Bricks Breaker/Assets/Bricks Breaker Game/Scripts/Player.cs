@@ -58,7 +58,7 @@ public class Player : MonoBehaviour {
 		if(flag && Time.time>=nextlaunch)
 		{
 			nextlaunch=Time.time+.2f;
-			audio.Play();
+			GetComponent<AudioSource>().Play();
 			Rigidbody2D laserclone=(Rigidbody2D)Instantiate(laser, new Vector3(transform.position.x+.5f, -2.8f), Quaternion.identity);
 			laserclone.velocity=new Vector2(transform.position.x+.5f, 10)*3;
 			Rigidbody2D laserclone1=(Rigidbody2D)Instantiate(laser, new Vector3(transform.position.x-.5f, -2.8f), Quaternion.identity);
@@ -82,7 +82,7 @@ public class Player : MonoBehaviour {
 	void flagcheck()
 	{
 		flag=false;
-		audio.Stop();
+		GetComponent<AudioSource>().Stop();
 	}
 
 	//diversion ball in random direction when hit the paddle(player)
