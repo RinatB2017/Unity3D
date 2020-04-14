@@ -3,5 +3,6 @@
 /Library/PackageCache
 /Library/ShaderCache
 /Library/StateCache
+/Library/il2cpp_cache
 *.apk
 *.log
