@@ -73,3 +73,11 @@ The following packages were updated:
   com.unity.multiplayer-hlapi from version 1.0.2 to 1.0.4
 The following packages were removed:
   com.unity.package-manager-ui@2.2.0
+
+=== Fri Apr 17 01:31:53 2020
+
+Packages were changed.
+Update Mode: updateDependencies
+
+The following packages were updated:
+  com.unity.ads from version 2.0.8 to 3.4.4
