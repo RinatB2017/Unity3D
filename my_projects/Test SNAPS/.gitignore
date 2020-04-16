@@ -1,0 +1,7 @@
+/Temp
+/Logs
+/Library/PackageCache
+/Library/ShaderCache
+/Library/StateCache
+*.apk
+*.log
