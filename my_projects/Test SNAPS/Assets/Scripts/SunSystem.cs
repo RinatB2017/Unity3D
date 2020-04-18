@@ -15,13 +15,8 @@ public class SunSystem : MonoBehaviour
         GameObject sphere = GameObject.CreatePrimitive(PrimitiveType.Sphere);
         Vector3 pos = new Vector3(3, 3, 3);
 
-        Material newMat = Resources.Load("/Yughues Fabric Materials/Carpet 01/Carpet pattern 01", typeof(Material)) as Material;
-        // Material newMat = Resources.Load<Material>("Yughues Fabric Materials/Carpet 01/Carpet pattern 01");
+        Material newMat = Resources.Load("Carpet pattern 02", typeof(Material)) as Material;
         sphere.GetComponent<MeshRenderer>().material = newMat;
-
-        // sphere.GetComponent<MeshRenderer>().material.color = Color.blue; // .GetTexture("Assets/Yughues Fabric Materials/Carpet 01/Carpet pattern 01.mat");
-        // sphere.GetComponent<MeshRenderer>().material.GetTexture("Carpet pattern 01");
-        // meshRenderer.material.GetTexture("_MainTex")
 
         sphere.transform.position = pos;
     }
