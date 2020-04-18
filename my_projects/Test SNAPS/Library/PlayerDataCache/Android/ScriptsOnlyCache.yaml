@@ -1,5 +1,9 @@
 ScriptsOnlyBuild:
   usedScripts:
+    Assembly-CSharp-Editor.dll:
+    - ReadmeEditor
+    Assembly-CSharp.dll:
+    - Readme
     Unity.Rider.Editor.dll:
     - Packages.Rider.Editor.UnitTesting.CallbackData
     UnityEditor.Graphs.dll:
@@ -542,5 +546,5 @@ ScriptsOnlyBuild:
   platform: 13
   scenePathNames:
   - Assets/Scenes/SampleScene.unity
-  playerPath: /home/boss/Programming/_GitHub/Unity3D/my_projects/Test SNAPS/Test
+  playerPath: /home/boss/Programming/_GitHub/Unity3D/my_projects/Test SNAPS/bin/Test
     SNAPS.apk

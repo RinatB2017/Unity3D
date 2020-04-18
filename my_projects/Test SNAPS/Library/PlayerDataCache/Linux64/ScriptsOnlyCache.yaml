@@ -542,4 +542,4 @@ ScriptsOnlyBuild:
   platform: 24
   scenePathNames:
   - Assets/Scenes/SampleScene.unity
-  playerPath: /home/boss/Programming/_GitHub/Unity3D/my_projects/Test SNAPS/Test_SNAPS.x86_64
+  playerPath: /home/boss/Programming/_GitHub/Unity3D/my_projects/Test SNAPS/bin/Test_SNAPS.x86_64
