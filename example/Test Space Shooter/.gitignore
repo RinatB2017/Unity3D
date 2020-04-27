@@ -1,5 +1,6 @@
 /Temp
 /Logs
+/bin
 /Library/PackageCache
 /Library/ShaderCache
 /Library/StateCache
